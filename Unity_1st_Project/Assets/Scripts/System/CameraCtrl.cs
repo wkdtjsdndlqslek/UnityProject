@@ -18,18 +18,18 @@ public class CameraCtrl : MonoBehaviour
         if (mousePosition.x < edgeThreshold)
         {
             transform.position +=Vector3.left*moveSpeed*Time.deltaTime;
-            if (transform.position.x < -4.73f)
+            if (transform.position.x < -8.4f)
             {
-                transform.position = new Vector3(-4.73f, 0, -1);
+                transform.position = new Vector3(-8.4f, 0, -1);
             }
         }
 
         else if (mousePosition.x > screenWidth-edgeThreshold)
         {
             transform.position +=Vector3.right*moveSpeed*Time.deltaTime;
-            if (transform.position.x > 4.73f)
+            if (transform.position.x > 8.4f)
             {
-                transform.position = new Vector3(4.73f, 0, -1);
+                transform.position = new Vector3(8.4f, 0, -1);
             }
         }
     }
