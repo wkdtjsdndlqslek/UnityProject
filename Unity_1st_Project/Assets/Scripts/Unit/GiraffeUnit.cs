@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GiraffeUnit : Player
+public class GiraffeUnit : PlayerUnit
 {
     public float _moveSpeed = 0.5f;
     public float _hp= 6000;

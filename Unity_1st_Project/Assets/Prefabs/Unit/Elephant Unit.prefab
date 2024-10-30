@@ -176,4 +176,4 @@ MonoBehaviour:
   _damage: 2000
   _attackSpeed: 3
   _unitPrice: 2700
-  _range: 5
+  _range: 3
