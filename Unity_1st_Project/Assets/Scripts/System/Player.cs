@@ -21,11 +21,6 @@ public class Player : MonoBehaviour
         StartCoroutine(Farming());
     }
     
-    private void Update()
-    {
-        
-    }
-
     IEnumerator Farming()
     {
         while (true)

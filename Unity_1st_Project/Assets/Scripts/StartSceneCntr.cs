@@ -24,5 +24,4 @@ public class StartSceneCntr : MonoBehaviour
     {
         Application.Quit();
     }
-
 }

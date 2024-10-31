@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UnitSpawn : MonoBehaviour
+public class PlyerUnitSpawn : MonoBehaviour
 {
     public Button monkeySpawn;
     public Button penguinSpawn;
@@ -15,6 +15,7 @@ public class UnitSpawn : MonoBehaviour
     public GameObject parrot;
     public GameObject hippo;
     public GameObject giraffe;
+    public Transform spawnPos;
 
     private void Start()
     {
@@ -28,9 +29,8 @@ public class UnitSpawn : MonoBehaviour
     private void SpawnMonkey()
     {
         if (GameManager.Instance.player.resources>=50)
-        {
-            Vector3 spawnPos = GameManager.Instance.player.transform.position;
-            Instantiate(monkey, spawnPos, Quaternion.identity);
+        { 
+            Instantiate(monkey,spawnPos);
             GameManager.Instance.player.resources-=50;
         }
     }
@@ -39,8 +39,7 @@ public class UnitSpawn : MonoBehaviour
     {
         if (GameManager.Instance.player.resources>=200)
         {
-            Vector3 spawnPos = GameManager.Instance.player.transform.position;
-            Instantiate(penguin, spawnPos, Quaternion.identity);
+            Instantiate(penguin, spawnPos);
             GameManager.Instance.player.resources-=200;
         }
     }
@@ -49,9 +48,7 @@ public class UnitSpawn : MonoBehaviour
     {
         if (GameManager.Instance.player.resources>=350)
         {
-            print("È£Ãâ");
-            Vector3 spawnPos = GameManager.Instance.player.transform.position;
-            Instantiate(parrot, spawnPos, Quaternion.identity);
+            Instantiate(parrot, spawnPos);
             GameManager.Instance.player.resources-=350;
         }
     }
@@ -60,8 +57,7 @@ public class UnitSpawn : MonoBehaviour
     {
         if (GameManager.Instance.player.resources>=1500)
         {
-            Vector3 spawnPos = GameManager.Instance.player.transform.position;
-            Instantiate(hippo, spawnPos, Quaternion.identity);
+            Instantiate(hippo, spawnPos);
             GameManager.Instance.player.resources-=1500;
         }
     }
@@ -70,8 +66,7 @@ public class UnitSpawn : MonoBehaviour
     {
         if (GameManager.Instance.player.resources>=2700)
         {
-            Vector3 spawnPos = GameManager.Instance.player.transform.position;
-            Instantiate(giraffe, spawnPos, Quaternion.identity);
+            Instantiate(giraffe, spawnPos);
             GameManager.Instance.player.resources-=2700;
         }
     }

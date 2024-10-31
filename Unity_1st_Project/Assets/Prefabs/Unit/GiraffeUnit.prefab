@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3351310299353190416}
   - component: {fileID: 8886592135590406721}
   - component: {fileID: 7993760753889085520}
-  - component: {fileID: 7823840461895648707}
   - component: {fileID: 340870589127478577}
+  - component: {fileID: 898561365407376441}
   m_Layer: 0
   m_Name: GiraffeUnit
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3141460173536869856}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.72, y: -1.97, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.44000003, y: 0.44000003, z: 0.44000003}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -114,7 +114,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &7823840461895648707
+--- !u!114 &340870589127478577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3141460173536869856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670ca7d8d90399a4abfebefaee7de055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 0.5
+  _hp: 6000
+  _damage: 2000
+  _attackSpeed: 3
+  _unitPrice: 2700
+  _range: 5
+--- !u!61 &898561365407376441
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,34 +164,16 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.24, y: 1}
+  m_Offset: {x: 0, y: 6.18}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.7400002, y: 0.3989128}
-    oldSize: {x: 10.327149, y: 30.000002}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 7.91, y: 12.36}
     newSize: {x: 10.327149, y: 30.000002}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.02, y: 4.92}
+  m_Size: {x: 7.91, y: 12.36}
   m_EdgeRadius: 0
---- !u!114 &340870589127478577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3141460173536869856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 670ca7d8d90399a4abfebefaee7de055, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveSpeed: 0.5
-  _hp: 6000
-  _damage: 2000
-  _attackSpeed: 3
-  _unitPrice: 2700
-  _range: 5
