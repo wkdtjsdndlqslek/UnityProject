@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemPopupPanel : MonoBehaviour
+public class ItemPanel : MonoBehaviour
 {
     public Button thunder;
     public Button hurricane;
@@ -11,6 +11,7 @@ public class ItemPopupPanel : MonoBehaviour
     public Button towerCooltime;
     public Button spawnCooltime;
     public Button resumeButton;
+    public GameObject itemPanel;
 
     private void Update()
     {
@@ -44,6 +45,7 @@ public class ItemPopupPanel : MonoBehaviour
     }
     private void Resume()
     {
-
+        itemPanel.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 }
