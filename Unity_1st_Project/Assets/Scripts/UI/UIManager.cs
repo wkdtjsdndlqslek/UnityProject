@@ -15,10 +15,10 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        itemButton.onClick.AddListener(ItemPopupPanel);
-        pauseButton.onClick.AddListener(PausePopupPanel);
         resourcesSlider.value = GameManager.Instance.player.ResourcesFillAmount;
         resourcesPercent.text = $"{GameManager.Instance.player.resources} / {GameManager.Instance.player.maxResources}";
+        itemButton.onClick.AddListener(ItemPopupPanel);
+        pauseButton.onClick.AddListener(PausePopupPanel);
     } 
 
     private void ItemPopupPanel()

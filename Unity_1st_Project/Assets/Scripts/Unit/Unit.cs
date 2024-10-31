@@ -18,7 +18,6 @@ public class Unit : MonoBehaviour
     {
         isAttack = false;
         RaycastHit2D[] hit = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y), -transform.right, range);
-        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y), -transform.right*range, Color.red);
         
         Move(hit, enemyCamp);
     }

@@ -13,7 +13,7 @@ public class ItemPanel : MonoBehaviour
     public Button resumeButton;
     public GameObject itemPanel;
 
-    private void Update()
+    private void Start()
     {
         thunder.onClick.AddListener(BuyThunder);
         hurricane.onClick.AddListener(BuyHurricane);

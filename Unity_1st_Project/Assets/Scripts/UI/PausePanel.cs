@@ -7,7 +7,7 @@ public class PausePanel : MonoBehaviour
 {
     public Button resume;
     public GameObject panel;
-    private void Update()
+    private void Start()
     {
         resume.onClick.AddListener(Resume);
     }

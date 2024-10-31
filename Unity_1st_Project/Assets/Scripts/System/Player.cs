@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public int hp = 3000;
     public int skillDamage;
 
+    
     private void Start()
     {
         GameManager.Instance.player = this;

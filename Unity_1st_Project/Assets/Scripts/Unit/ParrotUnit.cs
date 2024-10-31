@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GiraffeUnit : PlayerUnit
+public class ParrotUnit : PlayerUnit
 {
-    public float _moveSpeed = 0.5f;
-    public float _hp = 6000;
-    public int _damage = 2000;
+    public float _moveSpeed = 1.2f;
+    public float _hp = 800;
+    public int _damage = 900;
     public float _attackSpeed = 3;
-    public int _unitPrice = 2700;
-    public float _range = 5;
+    public int _unitPrice = 350;
+    public float _range = 3;
 
     protected override void Awake()
     {
