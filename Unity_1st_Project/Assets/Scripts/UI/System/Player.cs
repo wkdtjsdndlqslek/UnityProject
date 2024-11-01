@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     
     private void Start()
     {
-        GameManager.Instance.player = this;
+        GameManager.Instance.Player = this;
         StartCoroutine(Farming());
     }
     

@@ -9,7 +9,11 @@ public class StartSceneCntr : MonoBehaviour
     public Button startButton;
     public Button exitButton;
 
-    private void Update()
+    private void Awake()
+    {
+        GameManager.Instance.timeClear();
+    }
+    private void Start()
     {
         startButton.onClick.AddListener(OpenGameScene);
         exitButton.onClick.AddListener(QuitGame);
@@ -18,6 +22,8 @@ public class StartSceneCntr : MonoBehaviour
     private void OpenGameScene()
     {
         SceneManager.LoadScene("StageScene");
+        Time.timeScale = 1.0f;
+        
     }
 
     private void QuitGame()

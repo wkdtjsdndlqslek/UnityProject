@@ -28,46 +28,46 @@ public class PlyerUnitSpawn : MonoBehaviour
 
     private void SpawnMonkey()
     {
-        if (GameManager.Instance.player.resources>=50)
+        if (GameManager.Instance.Player.resources>=50)
         { 
             Instantiate(monkey,spawnPos);
-            GameManager.Instance.player.resources-=50;
+            GameManager.Instance.Player.resources-=50;
         }
     }
 
     private void SpawnPenguin()
     {
-        if (GameManager.Instance.player.resources>=200)
+        if (GameManager.Instance.Player.resources>=200)
         {
             Instantiate(penguin, spawnPos);
-            GameManager.Instance.player.resources-=200;
+            GameManager.Instance.Player.resources-=200;
         }
     }
 
     private void SpawnParrot()
     {
-        if (GameManager.Instance.player.resources>=350)
+        if (GameManager.Instance.Player.resources>=350)
         {
             Instantiate(parrot, spawnPos);
-            GameManager.Instance.player.resources-=350;
+            GameManager.Instance.Player.resources-=350;
         }
     }
 
     private void SpawnHippo()
     {
-        if (GameManager.Instance.player.resources>=1500)
+        if (GameManager.Instance.Player.resources>=1500)
         {
             Instantiate(hippo, spawnPos);
-            GameManager.Instance.player.resources-=1500;
+            GameManager.Instance.Player.resources-=1500;
         }
     }
 
     private void SpawnGiraffe()
     {
-        if (GameManager.Instance.player.resources>=2700)
+        if (GameManager.Instance.Player.resources>=2700)
         {
             Instantiate(giraffe, spawnPos);
-            GameManager.Instance.player.resources-=2700;
+            GameManager.Instance.Player.resources-=2700;
         }
     }
 }

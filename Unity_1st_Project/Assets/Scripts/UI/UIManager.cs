@@ -15,8 +15,8 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        resourcesSlider.value = GameManager.Instance.player.ResourcesFillAmount;
-        resourcesPercent.text = $"{GameManager.Instance.player.resources} / {GameManager.Instance.player.maxResources}";
+        resourcesSlider.value = GameManager.Instance.Player.ResourcesFillAmount;
+        resourcesPercent.text = $"{GameManager.Instance.Player.resources} / {GameManager.Instance.Player.maxResources}";
         itemButton.onClick.AddListener(ItemPopupPanel);
         pauseButton.onClick.AddListener(PausePopupPanel);
     } 
