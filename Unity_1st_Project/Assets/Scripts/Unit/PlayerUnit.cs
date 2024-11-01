@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerUnit : Unit
 {
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         camp = "Player";
         enemyCamp = "Enemy";
         gameObject.tag = camp;

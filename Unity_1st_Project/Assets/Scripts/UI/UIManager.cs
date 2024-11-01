@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour
         itemPanel.SetActive(true);
         Time.timeScale =0f;
     }
+
     private void PausePopupPanel()
     {
         pausePanel.SetActive(true);

@@ -6,6 +6,7 @@ public class Unit : MonoBehaviour
 {
     protected float moveSpeed;
     protected float hp;
+    protected float maxHp;
     protected int damage;
     protected float attackSpeed;
     protected int unitPrice;
@@ -13,6 +14,11 @@ public class Unit : MonoBehaviour
     protected string camp;
     protected string enemyCamp;
     protected bool isAttack;
+
+    protected virtual void Awake()
+    {
+        maxHp=hp;
+    }
 
     protected virtual void Update()
     {

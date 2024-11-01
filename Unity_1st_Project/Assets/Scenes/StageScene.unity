@@ -5747,8 +5747,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyList: []
   playerList: []
-  currentSec: 50
-  currentMin: 0
+  sec: 0
+  min: 0
 --- !u!4 &1609250321
 Transform:
   m_ObjectHideFlags: 0
