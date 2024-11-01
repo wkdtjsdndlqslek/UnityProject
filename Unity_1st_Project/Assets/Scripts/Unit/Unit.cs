@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Unit : MonoBehaviour
 {
@@ -8,12 +9,16 @@ public class Unit : MonoBehaviour
     protected float hp;
     protected float maxHp;
     protected int damage;
-    protected float attackSpeed;
     protected int unitPrice;
     protected float range;
     protected string camp;
     protected string enemyCamp;
     protected bool isAttack;
+    protected float preDamageTime;
+    protected float attackInteval=1;
+    public Image fillImage;
+    protected float HpFillAmount { get { return hp/maxHp; } }
+    protected List<RaycastHit2D> attackList = new List<RaycastHit2D>();
 
     protected virtual void Awake()
     {
@@ -22,19 +27,22 @@ public class Unit : MonoBehaviour
 
     protected virtual void Update()
     {
+        fillImage.fillAmount = HpFillAmount;
         isAttack = false;
         RaycastHit2D[] hit = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y), -transform.right, range);
         
-        Move(hit, enemyCamp);
+        Move(hit);
     }
 
-    protected virtual void Move(RaycastHit2D[] hit,string enemy)
+    protected virtual void Move(RaycastHit2D[] hit)
     {
+        attackList.Clear();
         for (int i = 0; i < hit.Length; i++)
         {
             if (hit[i].collider.CompareTag(enemyCamp))
             {
-                isAttack=true; break;
+                attackList.Add(hit[i]);
+                isAttack=true;
             }
         }
 
@@ -42,18 +50,38 @@ public class Unit : MonoBehaviour
         {
             transform.position += Vector3.left*moveSpeed*Time.deltaTime;
         }
+
         else
         {
-            Attack(hit,enemy);
+            Attack(attackList);
         }
     }
 
-    protected void Attack(RaycastHit2D[] hit,string enemy)
+    protected void Attack(List<RaycastHit2D> attackList)
     {
+        if (preDamageTime+attackInteval<Time.time)
+        {
+            foreach(var attack in attackList)
+            {
+                attack.collider.GetComponent<Unit>().TakeDamage(damage);
+            }
+        }
+
+        else
+        {
+            return;
+        }
+
+        preDamageTime = Time.time+attackInteval;
     }
 
     public void TakeDamage(int onHitDamage)
     {
+        print($"{gameObject.name},{onHitDamage}");
         hp-=onHitDamage;
+        if(hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

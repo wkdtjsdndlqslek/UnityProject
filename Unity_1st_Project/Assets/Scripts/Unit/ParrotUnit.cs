@@ -7,7 +7,6 @@ public class ParrotUnit : PlayerUnit
     public float _moveSpeed = 1.2f;
     public float _hp = 800;
     public int _damage = 900;
-    public float _attackSpeed = 3;
     public int _unitPrice = 350;
     public float _range = 3;
 
@@ -17,7 +16,6 @@ public class ParrotUnit : PlayerUnit
         moveSpeed = _moveSpeed;
         hp = _hp;
         damage = _damage;
-        attackSpeed = _attackSpeed;
         unitPrice = _unitPrice;
         range = _range;
     }

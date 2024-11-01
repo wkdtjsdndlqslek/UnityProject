@@ -17,7 +17,6 @@ public class HippoUnit : PlayerUnit
         moveSpeed = _moveSpeed;
         hp = _hp;
         damage = _damage;
-        attackSpeed = _attackSpeed;
         unitPrice = _unitPrice;
         range = _range;
     }

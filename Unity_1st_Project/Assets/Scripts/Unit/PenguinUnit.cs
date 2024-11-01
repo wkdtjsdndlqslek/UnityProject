@@ -7,7 +7,6 @@ public class PenguinUnit : PlayerUnit
     public float _moveSpeed = 0.7f;
     public float _hp = 2000;
     public int _damage = 200;
-    public float _attackSpeed = 3;
     public int _unitPrice = 200;
     public float _range = 1;
 
@@ -17,7 +16,6 @@ public class PenguinUnit : PlayerUnit
         moveSpeed = _moveSpeed;
         hp = _hp;
         damage = _damage;
-        attackSpeed = _attackSpeed;
         unitPrice = _unitPrice;
         range = _range;
     }
