@@ -13,12 +13,12 @@ public class HippoUnit : PlayerUnit
 
     protected override void Awake()
     {
-        base.Awake();
         moveSpeed = _moveSpeed;
         hp = _hp;
         damage = _damage;
         unitPrice = _unitPrice;
         range = _range;
+        base.Awake();
     }
 
     private void Start()

@@ -12,9 +12,14 @@ public class Player : MonoBehaviour
     public int level=1;
     public int cash=0;
     public int hp = 3000;
+    private int maxHp;
     public int skillDamage;
 
-    
+    private void Awake()
+    {
+        maxHp=hp;
+    }
+
     private void Start()
     {
         GameManager.Instance.Player = this;

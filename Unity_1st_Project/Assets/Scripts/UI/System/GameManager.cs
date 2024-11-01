@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
             min++;
         }
     }
+
     public void timeClear()
     {
         GameManager.Instance.sec = 0;

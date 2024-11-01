@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Unit : MonoBehaviour
+public abstract class Unit : MonoBehaviour
 {
     protected float moveSpeed;
     protected float hp;
@@ -34,29 +34,6 @@ public class Unit : MonoBehaviour
         Move(hit);
     }
 
-    protected virtual void Move(RaycastHit2D[] hit)
-    {
-        attackList.Clear();
-        for (int i = 0; i < hit.Length; i++)
-        {
-            if (hit[i].collider.CompareTag(enemyCamp))
-            {
-                attackList.Add(hit[i]);
-                isAttack=true;
-            }
-        }
-
-        if (!isAttack)
-        {
-            transform.position += Vector3.left*moveSpeed*Time.deltaTime;
-        }
-
-        else
-        {
-            Attack(attackList);
-        }
-    }
-
     protected void Attack(List<RaycastHit2D> attackList)
     {
         if (preDamageTime+attackInteval<Time.time)
@@ -81,7 +58,11 @@ public class Unit : MonoBehaviour
         hp-=onHitDamage;
         if(hp <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
+
+    protected abstract void Move(RaycastHit2D[] hit);
+
+    public abstract void Die();
 }

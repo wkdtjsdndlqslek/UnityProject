@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5341689913124809654}
   - component: {fileID: 1911151228540067053}
   - component: {fileID: 7546699796147785472}
-  - component: {fileID: 2629815009817509777}
   - component: {fileID: 3833207402899562687}
+  - component: {fileID: 4424927555453361225}
   m_Layer: 0
-  m_Name: HippoUnit
+  m_Name: PandaUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f3200f8c59e658746870b4fa78681906, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 951eb00252e7be34b8431e87e0bf591b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,25 +115,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2629815009817509777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7357219060373584517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ec8dac05456d2a44b5027736bbe1a99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillImage: {fileID: 5566791541775879713}
-  _moveSpeed: 0.5
-  _hp: 8000
-  _damage: 1500
-  _attackSpeed: 3
-  _unitPrice: 1500
-  _range: 1
 --- !u!61 &3833207402899562687
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -166,19 +147,37 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 3.075}
+  m_Offset: {x: 0, y: 3.93}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 11.13, y: 6.15}
+    oldSize: {x: 9, y: 7.86}
     newSize: {x: 10.327149, y: 30.000002}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.13, y: 6.15}
+  m_Size: {x: 9, y: 7.86}
   m_EdgeRadius: 0
+--- !u!114 &4424927555453361225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7357219060373584517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ccaf3463a778f4388444932387982e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillImage: {fileID: 5566791541775879713}
+  _moveSpeed: 0.5
+  _hp: 6000
+  _damage: 2000
+  _unitPrice: 2700
+  _range: 5
 --- !u!1001 &2809640838688087314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -261,7 +260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5464294378903095552, guid: fe11b3c085aabff4a873618d3d956dbf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5464294378903095552, guid: fe11b3c085aabff4a873618d3d956dbf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

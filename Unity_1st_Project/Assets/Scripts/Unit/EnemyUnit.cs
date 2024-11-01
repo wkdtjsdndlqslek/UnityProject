@@ -45,4 +45,10 @@ public class EnemyUnit : Unit
             Attack(attackList);
         }
     }
+
+    public override void Die()
+    {
+        GameManager.Instance.enemyList.Remove(this);
+        Destroy(gameObject);
+    }
 }

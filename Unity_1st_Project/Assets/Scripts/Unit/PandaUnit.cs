@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PenguinUnit : PlayerUnit
+public class PandatUnit : EnemyUnit
 {
-    public float _moveSpeed = 0.7f;
-    public float _hp = 2000;
-    public int _damage = 200;
-    public int _unitPrice = 200;
-    public float _range = 1;
+    public float _moveSpeed = 0.5f;
+    public float _hp = 6000;
+    public int _damage = 2000;
+    public int _unitPrice = 2700;
+    public float _range = 5;
 
     protected override void Awake()
     {
@@ -22,6 +22,6 @@ public class PenguinUnit : PlayerUnit
 
     private void Start()
     {
-        GameManager.Instance.playerList.Add(this);
+        GameManager.Instance.enemyList.Add(this);
     }
 }

@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.1826477, y: 2.9615145}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5140498, y: 0.25320715}
@@ -172,10 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca63bfd28e16f54d891b077f6a74182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fillImage: {fileID: 1038376842056179067}
   _moveSpeed: 0.5
   _hp: 6000
   _damage: 2000
-  _attackSpeed: 3
   _unitPrice: 2700
   _range: 3
 --- !u!1001 &7338017601678495304
@@ -260,7 +260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5464294378903095552, guid: fe11b3c085aabff4a873618d3d956dbf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 13
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5464294378903095552, guid: fe11b3c085aabff4a873618d3d956dbf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -279,6 +279,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe11b3c085aabff4a873618d3d956dbf, type: 3}
+--- !u!114 &1038376842056179067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7763341666712048435, guid: fe11b3c085aabff4a873618d3d956dbf, type: 3}
+  m_PrefabInstance: {fileID: 7338017601678495304}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3314916404212434760 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5464294378903095552, guid: fe11b3c085aabff4a873618d3d956dbf, type: 3}
