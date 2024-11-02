@@ -2252,6 +2252,58 @@ MonoBehaviour:
   pausePanel: {fileID: 1558673341}
   resourcesSlider: {fileID: 4780935103680272428}
   resourcesPercent: {fileID: 1496861314050728015}
+--- !u!1 &572765622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 572765624}
+  - component: {fileID: 572765623}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &572765623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572765622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db22963c761eb34dbac116387d5090f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemySpawnPos: {fileID: 2060989374}
+  spawnDelay: 3
+  spawnAmount: 1
+  elephantUnit: {fileID: 1005598596253059964, guid: 2418afe1d9e1d714e8258ccb6f616e08, type: 3}
+  pandaUnit: {fileID: 4424927555453361225, guid: 729cf9d1b80a74649a18226061edbc59, type: 3}
+  snakeUnit: {fileID: 5013871529797952152, guid: 050665b6131f09a42900bf8e9f2aeb0c, type: 3}
+  pigUnit: {fileID: 9177716993876762267, guid: 8586f7d322c02a54c970527bbaaee7be, type: 3}
+  rabbitUnit: {fileID: 1310152693604045607, guid: feb9c2513073695428dd55112e74b2a8, type: 3}
+--- !u!4 &572765624
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572765622}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &629530832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5211,7 +5263,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 4.135}
@@ -6561,7 +6613,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 4.1}
@@ -6670,12 +6722,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   farmingAmount: 100
   farmingDuration: 3
-  resources: 10000
-  maxResources: 10000
+  resources: 0
+  maxResources: 1000
   level: 1
   cash: 0
   hp: 3000
   skillDamage: 0
+  levelUp: {fileID: 1581912552368832411}
+  levelUptext: {fileID: 2117557890454217220}
+  levelUpPrice: 180
 --- !u!1 &1934828461
 GameObject:
   m_ObjectHideFlags: 0
@@ -10713,3 +10768,4 @@ SceneRoots:
   - {fileID: 1805220326}
   - {fileID: 2060989374}
   - {fileID: 322017740}
+  - {fileID: 572765624}

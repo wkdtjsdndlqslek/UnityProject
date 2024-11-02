@@ -130,7 +130,7 @@ MonoBehaviour:
   fillImage: {fileID: 2570845742219979118}
   _moveSpeed: 0.5
   _hp: 6000
-  _damage: 2000
+  _damage: 900
   _unitPrice: 2700
   _range: 5
 --- !u!61 &898561365407376441

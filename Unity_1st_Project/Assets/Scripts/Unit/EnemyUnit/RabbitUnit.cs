@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RabbitUnit : EnemyUnit
 {
-    public float _moveSpeed = 0.5f;
-    public float _hp = 6000;
-    public int _damage = 2000;
-    public int _unitPrice = 2700;
-    public float _range = 5;
+    public float _moveSpeed = 1f;
+    public float _hp = 1000;
+    public int _damage = 200;
+    public int _unitPrice = 50;
+    public float _range = 1;
 
     protected override void Awake()
     {

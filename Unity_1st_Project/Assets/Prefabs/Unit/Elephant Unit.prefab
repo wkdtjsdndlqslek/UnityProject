@@ -123,7 +123,7 @@ BoxCollider2D:
   m_Offset: {x: -0.1826477, y: 2.9615145}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5140498, y: 0.25320715}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 13, y: 12}
     newSize: {x: 13, y: 12}
     adaptiveTilingThreshold: 0.5
@@ -175,7 +175,7 @@ MonoBehaviour:
   fillImage: {fileID: 1038376842056179067}
   _moveSpeed: 0.5
   _hp: 6000
-  _damage: 2000
+  _damage: 1100
   _unitPrice: 2700
   _range: 3
 --- !u!1001 &7338017601678495304
