@@ -17,8 +17,8 @@ public class EnemyUnit : Unit
     {
         fillImage.fillAmount = HpFillAmount;
         isAttack = false;
-        RaycastHit2D[] hit = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y), transform.right, range);
-        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y), transform.right*range, Color.red);
+        RaycastHit2D[] hit = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y), transform.right, attackRange);
+        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y), transform.right*attackRange, Color.red);
 
         Move(hit);
     }
@@ -46,7 +46,7 @@ public class EnemyUnit : Unit
         }
     }
 
-    public override void Die()
+    protected override void Die()
     {
         GameManager.Instance.enemyList.Remove(this);
         Destroy(gameObject);

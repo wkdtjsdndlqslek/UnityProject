@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerUnit : Unit
 {
+    protected bool isCoolTime;
+    protected float unitCooltime;
+
     protected override void Awake()
     {
         base.Awake();
@@ -35,7 +38,7 @@ public class PlayerUnit : Unit
         }
     }
 
-    public override void Die()
+    protected override void Die()
     {
         GameManager.Instance.playerList.Remove(this);
         Destroy(gameObject);

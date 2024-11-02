@@ -10,13 +10,14 @@ public abstract class Unit : MonoBehaviour
     protected float maxHp;
     protected int damage;
     protected int unitPrice;
-    protected float range;
+    protected float attackRange;
     protected string camp;
     protected string enemyCamp;
     protected bool isAttack;
     protected float preDamageTime;
     protected float attackInteval=1;
     public Image fillImage;
+    protected bool isAreaAttack;
     protected float HpFillAmount { get { return hp/maxHp; } }
     protected List<RaycastHit2D> attackList = new List<RaycastHit2D>();
 
@@ -29,7 +30,7 @@ public abstract class Unit : MonoBehaviour
     {
         fillImage.fillAmount = HpFillAmount;
         isAttack = false;
-        RaycastHit2D[] hit = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y), -transform.right, range);
+        RaycastHit2D[] hit = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y), -transform.right, attackRange);
         
         Move(hit);
     }
@@ -38,9 +39,16 @@ public abstract class Unit : MonoBehaviour
     {
         if (preDamageTime+attackInteval<Time.time)
         {
-            foreach(var attack in attackList)
+            if (isAreaAttack)
             {
-                attack.collider.GetComponent<Unit>().TakeDamage(damage);
+                foreach (var attack in attackList)
+                {
+                    attack.collider.GetComponent<Unit>().TakeDamage(damage);
+                }
+            }
+            else
+            {
+                attackList[0].collider.GetComponent<Unit>().TakeDamage(damage);
             }
         }
 
@@ -64,5 +72,5 @@ public abstract class Unit : MonoBehaviour
 
     protected abstract void Move(RaycastHit2D[] hit);
 
-    public abstract void Die();
+    protected abstract void Die();
 }

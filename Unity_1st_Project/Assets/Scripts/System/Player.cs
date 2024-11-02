@@ -5,27 +5,26 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player : Unit
 {
-    public float farmingAmount=20f;
-    public float farmingDuration=3f;
-    public float resources=0f;
-    public float maxResources=1000f;
-    public float ResourcesFillAmount { get {  return resources/maxResources; } }
-    public int level=1;
-    public int cash=0;
-    public int hp = 3000;
-    private int maxHp;
-    public int skillDamage;
+    public float farmingAmount = 20f;
+    public float farmingDuration = 3f;
+    public float resources = 0f;
+    public float maxResources = 1000f;
+    public float ResourcesFillAmount { get { return resources/maxResources; } }
+    public int level = 1;
     public Button levelUp;
-    public TextMeshProUGUI levelUptext;
-    public int levelUpPrice=180;
+    public int cash = 0;
+    public int _hp = 3000;
+    public TextMeshProUGUI hpText;
+    public int skillDamage;
+    public int levelUpPrice = 180;
 
-    private void Awake()
+    protected override void Awake()
     {
-        maxHp=hp;
+        hp =_hp;
+        base.Awake();
     }
-
     private void Start()
     {
         levelUp.onClick.AddListener(LevelUp);
@@ -33,9 +32,10 @@ public class Player : MonoBehaviour
         StartCoroutine(Farming());
     }
 
-    private void Update()
+    protected override void Update()
     {
-        levelUptext.text = $"Lv. {level} LEVEL UP! ";
+        hpText.text = $"{hp}/{maxHp}";
+        fillImage.fillAmount = HpFillAmount;
     }
 
     IEnumerator Farming()
@@ -56,8 +56,6 @@ public class Player : MonoBehaviour
 
     private void LevelUp()
     {
-
-        print("ghcnf");
         if (level==8)
         { }
         else if (resources>levelUpPrice)
@@ -70,4 +68,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    protected override void Die()
+    {
+        Time.timeScale =0f;
+
+    }
+
+    protected override void Move(RaycastHit2D[] hit)
+    {
+        throw new System.NotImplementedException();
+    }
 }

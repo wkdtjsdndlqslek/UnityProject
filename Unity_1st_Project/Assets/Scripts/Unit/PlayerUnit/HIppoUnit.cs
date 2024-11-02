@@ -10,6 +10,7 @@ public class HippoUnit : PlayerUnit
     public float _attackSpeed = 3;
     public int _unitPrice = 1500;
     public float _range = 1;
+    protected bool _isAreaAttack = true;
 
     protected override void Awake()
     {
@@ -17,7 +18,8 @@ public class HippoUnit : PlayerUnit
         hp = _hp;
         damage = _damage;
         unitPrice = _unitPrice;
-        range = _range;
+        attackRange = _range;
+        isAreaAttack = _isAreaAttack;
         base.Awake();
     }
 

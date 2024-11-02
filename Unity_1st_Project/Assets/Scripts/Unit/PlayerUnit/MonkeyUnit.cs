@@ -9,6 +9,7 @@ public class MonkeyUnit : PlayerUnit
     public int _damage = 200;
     public int _unitPrice = 50;
     public float _range = 1;
+    protected bool _isAreaAttack = false;
 
     protected override void Awake()
     {
@@ -16,7 +17,8 @@ public class MonkeyUnit : PlayerUnit
         hp = _hp;
         damage = _damage;
         unitPrice = _unitPrice;
-        range = _range;
+        attackRange = _range;
+        isAreaAttack = _isAreaAttack;
         base.Awake();
     }
 

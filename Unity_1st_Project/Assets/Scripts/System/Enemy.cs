@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class EnemySpawn : MonoBehaviour
+public class Enemy : Unit
 {
     public Transform EnemySpawnPos;
     public float spawnDelay=2f;
@@ -14,10 +15,23 @@ public class EnemySpawn : MonoBehaviour
     public PigUnit pigUnit;
     public RabbitUnit rabbitUnit;
     private int enemyType=2;
+    public int _hp =9000;
+    public TextMeshProUGUI hpText;
 
-    private void Start()
+    private void Start() 
     {
         StartCoroutine(SpawnEnemy());
+    }
+    protected override void Awake()
+    {
+        hp=_hp;
+        base.Awake();
+    }
+
+    protected override void Update()
+    {
+        fillImage.fillAmount = HpFillAmount;
+        hpText.text = $"{hp}/{maxHp}";
     }
 
     IEnumerator SpawnEnemy()
@@ -58,7 +72,18 @@ public class EnemySpawn : MonoBehaviour
             {
                 enemyType = 3;
             }
-            
         }
     }
+
+    protected override void Die()
+    {
+        Time.timeScale = 0f;
+    }
+
+    protected override void Move(RaycastHit2D[] hit)
+
+    {
+        throw new System.NotImplementedException();
+    }
 }
+
