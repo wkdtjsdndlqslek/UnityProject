@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerUnit : Unit
 {
-    protected bool isCoolTime;
-    protected float unitCooltime;
 
     protected override void Awake()
     {
