@@ -12,11 +12,6 @@ public class GameManager : MonoBehaviour
     public List<PlayerUnit> playerList= new List<PlayerUnit>();
     public float sec = 0;
     public int min = 0;
-    public float monkeyCooltime = 1;
-    public float penguinCooltime = 2;
-    public float parrotCooltime = 3;
-    public float hippoCooltime = 4;
-    public float giraffeCooltime = 5;
 
     private void Awake()
     {
@@ -49,8 +44,4 @@ public class GameManager : MonoBehaviour
         GameManager.Instance.min = 0;
     }
 
-    IEnumerator coolTimeCalculate()
-    {
-        yield return new WaitForSeconds(giraffeCooltime);
-    }
 }

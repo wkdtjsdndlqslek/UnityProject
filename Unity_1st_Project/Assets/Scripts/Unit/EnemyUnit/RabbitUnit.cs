@@ -10,8 +10,6 @@ public class RabbitUnit : EnemyUnit
     public int _unitPrice = 50;
     public float _range = 1;
     protected bool _isAreaAttack =false;
-    public bool _isCoolTime;
-    public float _coolTime;
 
     protected override void Awake()
     {

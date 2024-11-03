@@ -7055,6 +7055,11 @@ MonoBehaviour:
   playerList: []
   sec: 0
   min: 0
+  monkeyCooltime: 1
+  penguinCooltime: 2
+  parrotCooltime: 3
+  hippoCooltime: 4
+  giraffeCooltime: 5
 --- !u!4 &1609250321
 Transform:
   m_ObjectHideFlags: 0
@@ -8230,16 +8235,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monkeySpawn: {fileID: 4638742731246280316}
-  penguinSpawn: {fileID: 1280587605}
-  parrotSpawn: {fileID: 1177129032}
-  hippoSpawn: {fileID: 169881757}
-  giraffeSpawn: {fileID: 1468789109}
   monkey: {fileID: 2517938613347039186, guid: ced085d0fe7a1c54fafb7788b70771c9, type: 3}
+  monkeyCooltime: 1
+  penguinSpawn: {fileID: 1280587605}
   penguin: {fileID: 6291538510977300039, guid: 052716ef98c022f4399095ea4bc2c47a, type: 3}
+  penguinCooltime: 2
+  parrotSpawn: {fileID: 1177129032}
   parrot: {fileID: 1812084744438038016, guid: 92ea7a3b70cd7d044ad437038ad281da, type: 3}
+  parrotCooltime: 3
+  hippoSpawn: {fileID: 169881757}
   hippo: {fileID: 7357219060373584517, guid: 6b7fed0345bea3c4fb7ebd3d72db392f, type: 3}
+  hippoCooltime: 4
+  giraffeSpawn: {fileID: 1468789109}
   giraffe: {fileID: 3141460173536869856, guid: f94a918bd6013f7488a695434b1a91a1, type: 3}
+  giraffeCooltime: 5
   spawnPos: {fileID: 1805220326}
+  monkeyCooltimePanel: {fileID: 1060507838}
+  penguinCooltimePanel: {fileID: 108686620}
+  parrotCooltimePanel: {fileID: 394553689}
+  hippoCooltimePanel: {fileID: 691927106}
+  giraffeCooltimePanel: {fileID: 1844666501}
 --- !u!1 &1940085743
 GameObject:
   m_ObjectHideFlags: 0
