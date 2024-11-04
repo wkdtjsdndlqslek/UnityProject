@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6d84ab2210610e44b9254c20a87b0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 1000
   moveSpeed: 5
+  explosionRange: 2
+  explosion: {fileID: 3978939033574756458, guid: ace75b96906074a4c8c5db6612bd6060, type: 3}
 --- !u!58 &3501808493467662937
 CircleCollider2D:
   m_ObjectHideFlags: 0
