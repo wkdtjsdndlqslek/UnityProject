@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     public List<PlayerUnit> playerList= new List<PlayerUnit>();
     public float sec = 0;
     public int min = 0;
+    public Transform aimArea;
 
     private void Awake()
     {

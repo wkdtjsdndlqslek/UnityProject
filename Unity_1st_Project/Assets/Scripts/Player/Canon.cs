@@ -4,13 +4,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Skill : MonoBehaviour
+public class Canon : MonoBehaviour
 {
     public Button skill;
     public GameObject aimingArea;
     private bool isActive=false;
     public GameObject canonBall;
-    public float canonSpeed =4f;
+    public Transform canon;
+    public Transform muzzle;
 
     private void Start()
     {
@@ -20,10 +21,6 @@ public class Skill : MonoBehaviour
     private void Update()
     {
         Aiming();
-        if (Input.GetMouseButton(0))
-        {
-            Fire();
-        }
     }
 
     private void SkillOn()
@@ -46,14 +43,20 @@ public class Skill : MonoBehaviour
             {
                 aimingArea.transform.position = new Vector3(8f, aimingArea.transform.position.y);
             }
+            Vector2 fireDirection = aimingArea.transform.position-canon.position;
+            canon.up = fireDirection;
+            GameManager.Instance.aimArea = aimingArea.transform;
+            if (Input.GetMouseButton(0))
+            {
+                Fire();
+            }
         }
     }
 
     private void Fire()
     {
-        canonBall.SetActive(true);
-        Vector3 canonBallRotation = (aimingArea.transform.position-canonBall.transform.position).normalized;
-        canonBall.transform.rotation =new Quaternion(canonBallRotation.x,canonBallRotation.y,canonBallRotation.z,0);
-        canonBall.transform.Translate(canonBallRotation*canonSpeed*Time.deltaTime);
+        Instantiate(canonBall,muzzle);
+        aimingArea.SetActive(false);
+        isActive = false;
     }
 }
