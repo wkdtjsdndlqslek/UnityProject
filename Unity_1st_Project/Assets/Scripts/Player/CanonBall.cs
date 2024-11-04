@@ -29,7 +29,6 @@ public class CanonBall : MonoBehaviour
     {
         if(collision.CompareTag("Land"))
         {
-            print(transform.position);
             Instantiate(explosion,transform.position,Quaternion.identity);
             RaycastHit2D[] hit2Ds = Physics2D.CircleCastAll(transform.position, explosionRange, Vector2.zero);
 
