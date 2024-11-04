@@ -66,6 +66,7 @@ public abstract class Unit : MonoBehaviour
         hp-=onHitDamage;
         if(hp <= 0)
         {
+            hp=0;
             Die();
         }
     }
