@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-
 public class GiraffeUnit : PlayerUnit
 {
     public float _moveSpeed = 0.5f;

@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static Cinemachine.DocumentationSortingAttribute;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,7 +13,6 @@ public class UIManager : MonoBehaviour
     public GameObject levelUpCooltime;
     public Slider resourcesSlider;
     public TextMeshProUGUI resourcesPercent;
-
 
     private void Update()
     {
@@ -42,5 +38,4 @@ public class UIManager : MonoBehaviour
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
     }
-
 }
