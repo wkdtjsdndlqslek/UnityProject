@@ -17,60 +17,75 @@ public class Enemy : Unit
     private int enemyType=2;
     public int _hp =9000;
     public TextMeshProUGUI hpText;
-
-    private void Start() 
-    {
-        StartCoroutine(SpawnEnemy());
-    }
+    public Coroutine coSpawn;
     protected override void Awake()
     {
         hp=_hp;
         base.Awake();
+        
     }
 
+    private void Start() 
+    {
+        GameManager.Instance.Enemy=this;
+        StartSpawnEnemy();
+    }
+
+    public void StartSpawnEnemy()
+    {
+        coSpawn=StartCoroutine(SpawnEnemy());
+    }
+    
     protected override void Update()
     {
         fillImage.fillAmount = HpFillAmount;
         hpText.text = $"{hp}/{maxHp}";
     }
 
-    IEnumerator SpawnEnemy()
+    public IEnumerator SpawnEnemy()
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnDelay);
-
-            for (int i = 0; i < spawnAmount; i++)
+            if (GameManager.Instance.isTimeStop==false)
             {
-                int randEnemy=Random.Range(0, enemyType);
-                switch (randEnemy)
+                for (int i = 0; i < spawnAmount; i++)
                 {
-                    case 0:
-                        Instantiate(rabbitUnit, EnemySpawnPos);
-                        break;
-                    case 1:
-                        Instantiate(pigUnit, EnemySpawnPos);
-                        break;
-                    case 2:
-                        Instantiate(snakeUnit, EnemySpawnPos);
-                        break;
-                    case 3:
-                        Instantiate(pandaUnit, EnemySpawnPos);
-                        break;
-                    case 4:
-                        Instantiate(elephantUnit, EnemySpawnPos);
-                        break;
+                    int randEnemy = Random.Range(0, enemyType);
+                    switch (randEnemy)
+                    {
+                        case 0:
+                            Instantiate(rabbitUnit, EnemySpawnPos);
+                            break;
+                        case 1:
+                            Instantiate(pigUnit, EnemySpawnPos);
+                            break;
+                        case 2:
+                            Instantiate(snakeUnit, EnemySpawnPos);
+                            break;
+                        case 3:
+                            Instantiate(pandaUnit, EnemySpawnPos);
+                            break;
+                        case 4:
+                            Instantiate(elephantUnit, EnemySpawnPos);
+                            break;
+                    }
                 }
-            }
 
-            if (GameManager.Instance.min>=4f)
-            {
-                enemyType = 5;
-            }
+                if (GameManager.Instance.min>=4f)
+                {
+                    enemyType = 5;
+                }
 
-            else if (GameManager.Instance.min>=1f)
+                else if (GameManager.Instance.min>=1f)
+                {
+                    enemyType = 3;
+                }
+                yield return new WaitForSeconds(spawnDelay);
+            }
+            else
             {
-                enemyType = 3;
+                yield return new WaitForSeconds(10f);
+                GameManager.Instance.isTimeStop = false;
             }
         }
     }

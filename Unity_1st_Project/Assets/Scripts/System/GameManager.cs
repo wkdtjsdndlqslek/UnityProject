@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance=>instance;
 
     public Player Player{get;set;}
+    public Enemy Enemy{get;set;}
     public List<EnemyUnit> enemyList = new List<EnemyUnit>();
     public List<PlayerUnit> playerList= new List<PlayerUnit>();
     public float sec = 0;
     public int min = 0;
     public Transform aimArea;
+    public bool isTimeStop=false;
 
     private void Awake()
     {

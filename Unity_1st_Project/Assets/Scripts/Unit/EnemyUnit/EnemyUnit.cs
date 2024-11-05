@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyUnit : Unit
 {
-
+    public float moveSpeed;
     protected override void Awake()
     {
         base.Awake();
@@ -37,7 +38,7 @@ public class EnemyUnit : Unit
 
         if (!isAttack)
         {
-            transform.position += Vector3.right*moveSpeed*Time.deltaTime;
+            transform.position += Vector3.right*MoveSpeed*Time.deltaTime;
         }
 
         else
@@ -50,5 +51,25 @@ public class EnemyUnit : Unit
     {
         GameManager.Instance.enemyList.Remove(this);
         Destroy(gameObject);
+    }
+
+    public void ResetSpeed()
+    {
+        MoveSpeed = moveSpeed;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Hurricane"))
+        {
+            StartCoroutine(KnockBack());
+        }
+    }
+
+    IEnumerator KnockBack()
+    {
+        this.MoveSpeed = -this.MoveSpeed;
+        yield return new WaitForSeconds(0.2f);
+        this.MoveSpeed = -this.MoveSpeed;
     }
 }

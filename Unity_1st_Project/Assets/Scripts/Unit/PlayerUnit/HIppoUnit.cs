@@ -14,7 +14,7 @@ public class HippoUnit : PlayerUnit
 
     protected override void Awake()
     {
-        moveSpeed = _moveSpeed;
+        MoveSpeed = _moveSpeed;
         hp = _hp;
         damage = _damage;
         unitPrice = _unitPrice;

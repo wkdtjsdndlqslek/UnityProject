@@ -27,7 +27,7 @@ public class PlayerUnit : Unit
 
         if (!isAttack)
         {
-            transform.position += Vector3.left*moveSpeed*Time.deltaTime;
+            transform.position += Vector3.left*MoveSpeed*Time.deltaTime;
         }
 
         else

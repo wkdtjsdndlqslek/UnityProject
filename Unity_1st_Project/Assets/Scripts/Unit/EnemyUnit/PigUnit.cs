@@ -14,6 +14,7 @@ public class PigUnit : EnemyUnit
     protected override void Awake()
     {
         moveSpeed = _moveSpeed;
+        MoveSpeed = moveSpeed;
         hp = _hp;
         damage = _damage;
         unitPrice = _unitPrice;

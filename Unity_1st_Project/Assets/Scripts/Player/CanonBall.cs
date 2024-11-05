@@ -12,9 +12,7 @@ public class CanonBall : MonoBehaviour
     public GameObject explosion;
 
     CircleCollider2D circleCollider;
-    private void Start()
-    {
-    }
+
     private void Update()
     {
         Move(Vector2.up);

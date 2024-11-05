@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Land
+  - Hurricane
   layers:
   - Default
   - TransparentFX

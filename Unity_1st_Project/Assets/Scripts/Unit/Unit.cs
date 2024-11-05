@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public abstract class Unit : MonoBehaviour
 {
-    protected float moveSpeed;
+    public float MoveSpeed { get; set; }
     protected float hp;
     protected float maxHp;
     protected int damage;
