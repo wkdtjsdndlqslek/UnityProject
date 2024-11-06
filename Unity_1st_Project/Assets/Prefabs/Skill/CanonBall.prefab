@@ -101,7 +101,7 @@ MonoBehaviour:
   damage: 1000
   moveSpeed: 5
   explosionRange: 2
-  explosion: {fileID: 3978939033574756458, guid: ace75b96906074a4c8c5db6612bd6060, type: 3}
+  explosion: {fileID: 7589320071214089813, guid: 54933baaee3a04244ab9be5f5be47988, type: 3}
 --- !u!58 &2268758959875171674
 CircleCollider2D:
   m_ObjectHideFlags: 0

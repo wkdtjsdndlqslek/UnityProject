@@ -14,7 +14,7 @@ public class Player : Unit
     public float ResourcesFillAmount { get { return resources/maxResources; } }
     public int level = 1;
     public Button levelUp;
-    public int cash = 0;
+    public int cash = 1000;
     public int _hp = 3000;
     public TextMeshProUGUI hpText;
     public int skillDamage;

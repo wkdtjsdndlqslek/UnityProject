@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlyerUnitSpawn : MonoBehaviour
+public class UnitSpawn : MonoBehaviour
 {
     public Button monkeySpawn;
     public GameObject monkey;
-    public float monkeyCooltime = 1;
+    public float _monkeyCooltime = 1;
     public Button penguinSpawn;
     public GameObject penguin;
-    public float penguinCooltime = 2;
+    public float _penguinCooltime = 2;
     public Button parrotSpawn;
     public GameObject parrot;
-    public float parrotCooltime = 3;
+    public float _parrotCooltime = 3;
     public Button hippoSpawn;
     public GameObject hippo;
-    public float hippoCooltime = 4;
+    public float _hippoCooltime = 4;
     public Button giraffeSpawn;
     public GameObject giraffe;
-    public float giraffeCooltime = 5;
+    public float _giraffeCooltime = 5;
     public Transform spawnPos;
     public Image monkeyCooltimePanel;
     public Image penguinCooltimePanel;
@@ -31,6 +31,11 @@ public class PlyerUnitSpawn : MonoBehaviour
     public GameObject parrotLackResourcePanel;
     public GameObject hippoLackResourcePanel;
     public GameObject giraffeLackResourcePanel;
+    private float monkeyCooltime;
+    private float penguinCooltime;
+    private float parrotCooltime;
+    private float hippoCooltime;
+    private float giraffeCooltime;
     private float endMonkeyCooltime=0;
     private float endPenguinCooltime=0;
     private float endParrotCooltime=0;
@@ -44,6 +49,11 @@ public class PlyerUnitSpawn : MonoBehaviour
 
     private void Awake()
     {
+        monkeyCooltime =_monkeyCooltime;
+        penguinCooltime =_penguinCooltime;
+        parrotCooltime =_parrotCooltime;
+        hippoCooltime =_hippoCooltime;
+        giraffeCooltime =_giraffeCooltime;
         startMonkeyCooltime =-monkeyCooltime;
         startPenguinCooltime =-penguinCooltime;
         startParrotCooltime =-parrotCooltime;
@@ -52,6 +62,7 @@ public class PlyerUnitSpawn : MonoBehaviour
     }
     private void Start()
     {
+        GameManager.Instance.UnitSpawn=this;
         monkeySpawn.onClick.AddListener(SpawnMonkey);
         penguinSpawn.onClick.AddListener(SpawnPenguin);
         parrotSpawn.onClick.AddListener(SpawnParrot);
@@ -142,5 +153,25 @@ public class PlyerUnitSpawn : MonoBehaviour
             endGiraffeCooltime =startGiraffeCooltime+giraffeCooltime;
         }
         else { return; }
+    }
+
+    public void accessNoCool()
+    {
+        StartCoroutine(NoCool());
+    }
+
+    public IEnumerator NoCool()
+    {
+        monkeyCooltime=0;
+        penguinCooltime=0;
+        parrotCooltime=0;
+        hippoCooltime=0;
+        giraffeCooltime=0;
+        yield return new WaitForSeconds(10f);
+        monkeyCooltime=_monkeyCooltime;
+        penguinCooltime=_penguinCooltime;
+        parrotCooltime=_parrotCooltime;
+        hippoCooltime=_hippoCooltime;
+        giraffeCooltime=_giraffeCooltime;
     }
 }

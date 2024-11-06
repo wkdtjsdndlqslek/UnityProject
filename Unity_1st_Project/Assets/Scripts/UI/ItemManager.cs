@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ItemManager : MonoBehaviour
 {
+    public int thunderCost=10;
+    public int hurricaneCost=20;
+    public int monsterStopCost=40;
+    public int canonNoCoolCost=30;
+    public int spawnNoCoolCost=90;
+    public TextMeshProUGUI currentCash;
     public Button thunderButton;
     public Button hurricaneButton;
     public Button monsterStopButton;
@@ -26,6 +33,11 @@ public class ItemManager : MonoBehaviour
         spawnNoCooltimeButton.onClick.AddListener(SpawnNoCooltime);
     }
 
+    private void Update()
+    {
+        currentCash.text=$"{GameManager.Instance.Player.cash}";
+    }
+
     private void Resume()
     {
         itemPanel.SetActive(false);
@@ -34,33 +46,73 @@ public class ItemManager : MonoBehaviour
 
     private void Thunder()
     {
-        itemPanel.SetActive(false);
-        Time.timeScale = 1f;
-        Instantiate(thunderAiming);
-        
+        if (GameManager.Instance.Player.cash>=thunderCost)
+        {
+            itemPanel.SetActive(false);
+            Time.timeScale = 1f;
+            Instantiate(thunderAiming);
+            GameManager.Instance.Player.cash -= thunderCost;
+        }
+        else
+        {
+
+        }
     }
     private void Hurricane()
     {
-        itemPanel.SetActive(false);
-        Time.timeScale = 1f;
-        Instantiate(hurricane,new Vector2 (8,0.47f),Quaternion.identity);
+        if (GameManager.Instance.Player.cash>=hurricaneCost)
+        {
+            itemPanel.SetActive(false);
+            Time.timeScale = 1f;
+            Instantiate(hurricane, new Vector2(8, 0.47f), Quaternion.identity);
+            GameManager.Instance.Player.cash -=hurricaneCost;
+        }
+        else
+        {
+
+        }
     }
     private void MonsterStop()
     {
-        itemPanel.SetActive(false);
-        Time.timeScale = 1f; 
-        timeStoptrigger.gameObject.SetActive(true);
+        if (GameManager.Instance.Player.cash>=monsterStopCost)
+        {
+            itemPanel.SetActive(false);
+            Time.timeScale = 1f;
+            timeStoptrigger.gameObject.SetActive(true);
+            GameManager.Instance.Player.cash -=monsterStopCost;
+        }
+        else
+        {
+
+        }
     }
     
     private void CanonNoCooltime()
     {
-        itemPanel.SetActive(false);
-        Time.timeScale = 1f;
-        GameManager.Instance.Canon.accessNoCool();
+        if (GameManager.Instance.Player.cash>=canonNoCoolCost)
+        {
+            itemPanel.SetActive(false);
+            Time.timeScale = 1f;
+            GameManager.Instance.Canon.accessNoCool();
+            GameManager.Instance.Player.cash -=canonNoCoolCost;
+        }
+        else
+        {
+
+        }
     }
     private void SpawnNoCooltime()
     {
-        itemPanel.SetActive(false);
-        Time.timeScale = 1f;
+        if (GameManager.Instance.Player.cash>=spawnNoCoolCost)
+        {
+            itemPanel.SetActive(false);
+            Time.timeScale = 1f;
+            GameManager.Instance.UnitSpawn.accessNoCool();
+            GameManager.Instance.Player.cash -= spawnNoCoolCost;
+        }
+        else
+        {
+
+        }
     }
 }

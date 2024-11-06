@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public Player Player{get;set;}
     public Enemy Enemy{get;set;}
+    public UnitSpawn UnitSpawn{get;set;}
     public List<EnemyUnit> enemyList = new List<EnemyUnit>();
     public List<PlayerUnit> playerList= new List<PlayerUnit>();
     public Canon Canon{get;set;}
