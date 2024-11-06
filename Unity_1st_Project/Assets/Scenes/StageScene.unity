@@ -4327,7 +4327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aedfab1695cbfd429e265bbca65ccbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canonCooltime: 30
+  _canonCooltime: 60
   NoCoolDuration: 5
   skill: {fileID: 6053019165676972298}
   aimingArea: {fileID: 3246046314080478665}
