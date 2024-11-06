@@ -1,33 +1,44 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Canon : MonoBehaviour
 {
+    public float _canonCooltime =30;
+    private float canonCooltime;
+    public float NoCoolDuration = 5f;
     public Button skill;
     public GameObject aimingArea;
     private bool isActive=false;
     public GameObject canonBall;
     public Transform canon;
     public Transform muzzle;
-    public float canonCooltime =30;
-    private float startCooltime=0f;
+    public Image canonCooltimePanel;
+    private float startCooltime;
+
+    private void Awake()
+    {
+        canonCooltime = _canonCooltime;
+        startCooltime=-canonCooltime;
+    }
 
     private void Start()
     {
+        GameManager.Instance.Canon = this;
         skill.onClick.AddListener(SkillOn);
     }
 
     private void Update()
     {
         Aiming();
+        canonCooltimePanel.fillAmount = (canonCooltime-(Time.time- startCooltime))/canonCooltime;
     }
 
     private void SkillOn()
     {
         if (Time.time >= startCooltime + canonCooltime)
         {
-            print($"time{Time.time}");
-            print($"Sum{startCooltime+canonCooltime}");
             isActive = !isActive;
             aimingArea.SetActive(isActive);
             startCooltime = Time.time;
@@ -60,8 +71,19 @@ public class Canon : MonoBehaviour
 
     private void Fire()
     {
-        Instantiate(canonBall,muzzle);
+        Instantiate(canonBall,muzzle.position,muzzle.rotation);
         aimingArea.SetActive(false);
         isActive = false;
+    }
+    public void accessNoCool()
+    {
+        StartCoroutine(NoCool());
+    }
+    public IEnumerator NoCool()
+    {
+        print("»£√‚");
+        canonCooltime=0;
+        yield return new WaitForSeconds(NoCoolDuration);
+        canonCooltime =_canonCooltime;
     }
 }

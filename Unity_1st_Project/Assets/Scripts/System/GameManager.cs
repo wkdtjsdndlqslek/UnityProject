@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Enemy Enemy{get;set;}
     public List<EnemyUnit> enemyList = new List<EnemyUnit>();
     public List<PlayerUnit> playerList= new List<PlayerUnit>();
+    public Canon Canon{get;set;}
     public float sec = 0;
     public int min = 0;
     public Transform aimArea;

@@ -25,7 +25,7 @@ public class CanonBall : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Land"))
+        if (collision.CompareTag("Land"))
         {
             Instantiate(explosion,transform.position,Quaternion.identity);
             RaycastHit2D[] hit2Ds = Physics2D.CircleCastAll(transform.position, explosionRange, Vector2.zero);
@@ -46,7 +46,6 @@ public class CanonBall : MonoBehaviour
                     hit2d.collider.GetComponent<EnemyUnit>().TakeDamage(damage);
                 }
             }
-
             Destroy(gameObject);
         }
         

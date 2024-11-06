@@ -8,8 +8,8 @@ public class ItemManager : MonoBehaviour
     public Button thunderButton;
     public Button hurricaneButton;
     public Button monsterStopButton;
-    public Button canonCooltimeButton;
-    public Button spawnCooltimeButton;
+    public Button canonNoCooltimeButton;
+    public Button spawnNoCooltimeButton;
     public Button resumeButton;
     public GameObject itemPanel;
     public ThunderAim thunderAiming;
@@ -22,8 +22,8 @@ public class ItemManager : MonoBehaviour
         thunderButton.onClick.AddListener(Thunder);
         hurricaneButton.onClick.AddListener(Hurricane);
         monsterStopButton.onClick.AddListener(MonsterStop);
-        canonCooltimeButton.onClick.AddListener(CanonCooltime);
-        spawnCooltimeButton.onClick.AddListener(SpawnCooltime);
+        canonNoCooltimeButton.onClick.AddListener(CanonNoCooltime);
+        spawnNoCooltimeButton.onClick.AddListener(SpawnNoCooltime);
     }
 
     private void Resume()
@@ -52,12 +52,13 @@ public class ItemManager : MonoBehaviour
         timeStoptrigger.gameObject.SetActive(true);
     }
     
-    private void CanonCooltime()
+    private void CanonNoCooltime()
     {
         itemPanel.SetActive(false);
         Time.timeScale = 1f;
+        GameManager.Instance.Canon.accessNoCool();
     }
-    private void SpawnCooltime()
+    private void SpawnNoCooltime()
     {
         itemPanel.SetActive(false);
         Time.timeScale = 1f;

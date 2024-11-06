@@ -1795,8 +1795,8 @@ MonoBehaviour:
   thunderButton: {fileID: 1091756843}
   hurricaneButton: {fileID: 2039484759}
   monsterStopButton: {fileID: 7511150758248514482}
-  canonCooltimeButton: {fileID: 1422183415}
-  spawnCooltimeButton: {fileID: 1312363565}
+  canonNoCooltimeButton: {fileID: 1422183415}
+  spawnNoCooltimeButton: {fileID: 1312363565}
   resumeButton: {fileID: 1199550783}
   itemPanel: {fileID: 289664909}
   thunderAiming: {fileID: 8961113372392245230, guid: 692c1a3588927a943b840070aebc11c2, type: 3}
@@ -3365,7 +3365,7 @@ GameObject:
   - component: {fileID: 597079865}
   - component: {fileID: 597079866}
   m_Layer: 0
-  m_Name: Skill
+  m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3401,12 +3401,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aedfab1695cbfd429e265bbca65ccbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canonCooltime: 30
+  NoCoolDuration: 5
   skill: {fileID: 6053019165676972298}
   aimingArea: {fileID: 3246046314080478665}
-  canonBall: {fileID: 2854863739572445696, guid: f4236ee0beadd944eafac3c5152a3396, type: 3}
+  canonBall: {fileID: 5168666013785094962, guid: ffb08c7dbf82483478a7d4580f879353, type: 3}
   canon: {fileID: 1795464747}
   muzzle: {fileID: 1989004442}
-  canonCooltime: 30
+  canonCooltimePanel: {fileID: 458248610}
 --- !u!1 &629530832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5166,6 +5168,7 @@ GameObject:
   - component: {fileID: 977116078}
   - component: {fileID: 977116079}
   - component: {fileID: 977116080}
+  - component: {fileID: 977116081}
   m_Layer: 0
   m_Name: Land
   m_TagString: Land
@@ -5285,6 +5288,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 19.2, y: 1.58}
   m_EdgeRadius: 0
+--- !u!50 &977116081
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977116077}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1060507838
 GameObject:
   m_ObjectHideFlags: 0
@@ -5568,7 +5598,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 284.5, y: -28.79004}
+  m_AnchoredPosition: {x: 284.5, y: -28.789978}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1091756843
@@ -6929,7 +6959,7 @@ GameObject:
   - component: {fileID: 1312363566}
   - component: {fileID: 1312363565}
   m_Layer: 5
-  m_Name: SpawnCooltime
+  m_Name: SpawnNoCooltime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7324,7 +7354,7 @@ GameObject:
   - component: {fileID: 1422183416}
   - component: {fileID: 1422183415}
   m_Layer: 5
-  m_Name: CanonCooltime
+  m_Name: CanonNoCooltime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9213,14 +9243,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795464746}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.65796685, w: 0.7530469}
+  m_LocalRotation: {x: 0, y: 0, z: 0.656059, w: 0.75470966}
   m_LocalPosition: {x: -0.87, y: 6.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1989004442}
   m_Father: {fileID: 597079865}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 82.29}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 82}
 --- !u!212 &1795464748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10333,7 +10363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 853.5, y: -28.79004}
+  m_AnchoredPosition: {x: 853.5, y: -28.789978}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2039484759
@@ -11194,7 +11224,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skill
+  m_text: Canon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ca247a3092b7b404dbaa6f4ab43e450c, type: 2}
   m_sharedMaterial: {fileID: -403277894513911722, guid: ca247a3092b7b404dbaa6f4ab43e450c, type: 2}
@@ -11221,7 +11251,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
+  m_fontSize: 45
   m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11588,7 +11618,7 @@ GameObject:
   - component: {fileID: 8734775484879672770}
   - component: {fileID: 6053019165676972298}
   m_Layer: 5
-  m_Name: Skill
+  m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11839,7 +11869,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1422.5, y: -28.79004}
+  m_AnchoredPosition: {x: 1422.5, y: -28.789978}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581912552368832411
@@ -14354,17 +14384,17 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1659033766}
+  - {fileID: 965467518}
   - {fileID: 380586944}
   - {fileID: 1609250321}
-  - {fileID: 965467518}
   - {fileID: 1693367714}
-  - {fileID: 354364472}
+  - {fileID: 185773227}
+  - {fileID: 1805220326}
+  - {fileID: 2060989374}
+  - {fileID: 322017740}
   - {fileID: 548548696}
   - {fileID: 836441534}
   - {fileID: 1917551862}
   - {fileID: 1467048204}
   - {fileID: 59815686}
-  - {fileID: 1805220326}
-  - {fileID: 2060989374}
-  - {fileID: 322017740}
-  - {fileID: 185773227}
+  - {fileID: 354364472}
