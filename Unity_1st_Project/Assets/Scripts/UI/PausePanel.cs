@@ -30,6 +30,15 @@ public class PausePanel : MonoBehaviour
     {
         GameManager.Instance.playerList.Clear();
         GameManager.Instance.enemyList.Clear();
+        GameManager.Instance.Player=null;
+        GameManager.Instance.Enemy=null;
+        GameManager.Instance.UnitSpawn=null;
+        GameManager.Instance.Canon=null;
+        GameManager.Instance.sec=0;
+        GameManager.Instance.min=0;
+        GameManager.Instance.aimArea=null;
+        GameManager.Instance.isTimeStop=false;
+
         SceneManager.LoadScene("StartScene");
     }
 }

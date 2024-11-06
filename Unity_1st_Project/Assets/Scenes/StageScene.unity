@@ -2430,7 +2430,7 @@ MonoBehaviour:
   hurricaneButton: {fileID: 3761917150610284498}
   monsterStopButton: {fileID: 225565765}
   canonNoCooltimeButton: {fileID: 184721225}
-  spawnNoCooltimeButton: {fileID: 184721225}
+  spawnNoCooltimeButton: {fileID: 443724771}
   resumeButton: {fileID: 1199550783}
   itemPanel: {fileID: 289664909}
   thunderAiming: {fileID: 8961113372392245230, guid: 692c1a3588927a943b840070aebc11c2, type: 3}
