@@ -28,6 +28,8 @@ public class PausePanel : MonoBehaviour
     }
     private void Lobby()
     {
+        GameManager.Instance.playerList.Clear();
+        GameManager.Instance.enemyList.Clear();
         SceneManager.LoadScene("StartScene");
     }
 }

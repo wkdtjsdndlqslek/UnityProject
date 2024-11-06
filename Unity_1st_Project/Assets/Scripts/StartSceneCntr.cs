@@ -9,12 +9,9 @@ public class StartSceneCntr : MonoBehaviour
     public Button startButton;
     public Button exitButton;
 
-    private void Awake()
-    {
-        GameManager.Instance.timeClear();
-    }
     private void Start()
     {
+        GameManager.Instance.timeClear();
         startButton.onClick.AddListener(OpenGameScene);
         exitButton.onClick.AddListener(QuitGame);
     }
