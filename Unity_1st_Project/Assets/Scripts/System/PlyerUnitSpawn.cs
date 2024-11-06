@@ -21,17 +21,35 @@ public class PlyerUnitSpawn : MonoBehaviour
     public GameObject giraffe;
     public float giraffeCooltime = 5;
     public Transform spawnPos;
-    public GameObject monkeyCooltimePanel;
-    public GameObject penguinCooltimePanel;
-    public GameObject parrotCooltimePanel;
-    public GameObject hippoCooltimePanel;
-    public GameObject giraffeCooltimePanel;
+    public Image monkeyCooltimePanel;
+    public Image penguinCooltimePanel;
+    public Image parrotCooltimePanel;
+    public Image hippoCooltimePanel;
+    public Image giraffeCooltimePanel;
+    public GameObject monkeyLackResourcePanel;
+    public GameObject penguinLackResourcePanel;
+    public GameObject parrotLackResourcePanel;
+    public GameObject hippoLackResourcePanel;
+    public GameObject giraffeLackResourcePanel;
     private float endMonkeyCooltime=0;
     private float endPenguinCooltime=0;
     private float endParrotCooltime=0;
     private float endHippoCooltime=0;
     private float endGiraffeCooltime=0;
+    private float startMonkeyCooltime;
+    private float startPenguinCooltime;
+    private float startParrotCooltime;
+    private float startHippoCooltime;
+    private float startGiraffeCooltime;
 
+    private void Awake()
+    {
+        startMonkeyCooltime =-monkeyCooltime;
+        startPenguinCooltime =-penguinCooltime;
+        startParrotCooltime =-parrotCooltime;
+        startHippoCooltime =-hippoCooltime;
+        startGiraffeCooltime =-giraffeCooltime;
+    }
     private void Start()
     {
         monkeySpawn.onClick.AddListener(SpawnMonkey);
@@ -44,21 +62,26 @@ public class PlyerUnitSpawn : MonoBehaviour
     private void Update()
     {
         cooltimeCheck();
+        monkeyCooltimePanel.fillAmount = (monkeyCooltime-(Time.time -startMonkeyCooltime))/(monkeyCooltime);
+        penguinCooltimePanel.fillAmount =(penguinCooltime-(Time.time -startPenguinCooltime))/(penguinCooltime);
+        parrotCooltimePanel.fillAmount =(parrotCooltime -(Time.time - startParrotCooltime))/(parrotCooltime);
+        hippoCooltimePanel.fillAmount =(hippoCooltime -(Time.time - startHippoCooltime))/(hippoCooltime);
+        giraffeCooltimePanel.fillAmount =(giraffeCooltime -(Time.time - startGiraffeCooltime))/(giraffeCooltime);
     }
 
     private void cooltimeCheck()
     {
-        if (endMonkeyCooltime < Time.time && GameManager.Instance.Player.resources>=50) monkeyCooltimePanel.SetActive(false);
-        if (endPenguinCooltime < Time.time && GameManager.Instance.Player.resources>=200) penguinCooltimePanel.SetActive(false);
-        if (endParrotCooltime < Time.time && GameManager.Instance.Player.resources>=350) parrotCooltimePanel.SetActive(false);
-        if (endHippoCooltime < Time.time && GameManager.Instance.Player.resources>=1500) hippoCooltimePanel.SetActive(false);
-        if (endGiraffeCooltime < Time.time && GameManager.Instance.Player.resources >= 2700) giraffeCooltimePanel.SetActive(false);
+        if (GameManager.Instance.Player.resources>=50) monkeyLackResourcePanel.SetActive(false);
+        if (GameManager.Instance.Player.resources>=200) penguinLackResourcePanel.SetActive(false);
+        if (GameManager.Instance.Player.resources >= 350) parrotLackResourcePanel.SetActive(false);
+        if (GameManager.Instance.Player.resources >= 1500) hippoLackResourcePanel.SetActive(false);
+        if (GameManager.Instance.Player.resources >= 2700) giraffeLackResourcePanel.SetActive(false);
 
-        if (endMonkeyCooltime > Time.time || GameManager.Instance.Player.resources < 50) monkeyCooltimePanel.SetActive(true);
-        if (endPenguinCooltime > Time.time || GameManager.Instance.Player.resources < 200) penguinCooltimePanel.SetActive(true);
-        if (endParrotCooltime > Time.time || GameManager.Instance.Player.resources < 350) parrotCooltimePanel.SetActive(true);
-        if (endHippoCooltime > Time.time || GameManager.Instance.Player.resources < 1500) hippoCooltimePanel.SetActive(true);
-        if (endGiraffeCooltime > Time.time || GameManager.Instance.Player.resources < 2700) giraffeCooltimePanel.SetActive(true);
+        if (GameManager.Instance.Player.resources < 50) monkeyLackResourcePanel.SetActive(true);
+        if (GameManager.Instance.Player.resources < 200) penguinLackResourcePanel.SetActive(true);
+        if (GameManager.Instance.Player.resources < 350) parrotLackResourcePanel.SetActive(true);
+        if (GameManager.Instance.Player.resources < 1500) hippoLackResourcePanel.SetActive(true);
+        if (GameManager.Instance.Player.resources < 2700) giraffeLackResourcePanel.SetActive(true);
     }
 
     private void SpawnMonkey()
@@ -67,7 +90,8 @@ public class PlyerUnitSpawn : MonoBehaviour
         {
             Instantiate(monkey, spawnPos);
             GameManager.Instance.Player.resources-=50;
-            endMonkeyCooltime = Time.time+monkeyCooltime;
+            startMonkeyCooltime = Time.time;
+            endMonkeyCooltime = startMonkeyCooltime+monkeyCooltime;
         }
         else { return; }
     }
@@ -78,7 +102,8 @@ public class PlyerUnitSpawn : MonoBehaviour
         {
             Instantiate(penguin, spawnPos);
             GameManager.Instance.Player.resources-=200;
-            endPenguinCooltime = Time.time+penguinCooltime;
+            startPenguinCooltime = Time.time;
+            endPenguinCooltime = startPenguinCooltime+penguinCooltime;
         }
         else { return; }
     }
@@ -89,7 +114,8 @@ public class PlyerUnitSpawn : MonoBehaviour
         {
             Instantiate(parrot, spawnPos);
             GameManager.Instance.Player.resources-=350;
-            endParrotCooltime = Time.time+parrotCooltime;
+            startParrotCooltime = Time.time;
+            endParrotCooltime =startParrotCooltime+parrotCooltime;
         }
         else { return; }
     }
@@ -100,7 +126,8 @@ public class PlyerUnitSpawn : MonoBehaviour
         {
             Instantiate(hippo, spawnPos);
             GameManager.Instance.Player.resources-=1500;
-            endHippoCooltime = Time.time+hippoCooltime;
+            startHippoCooltime = Time.time;
+            endHippoCooltime = startHippoCooltime+hippoCooltime;
         }
         else { return; }
     }
@@ -111,7 +138,8 @@ public class PlyerUnitSpawn : MonoBehaviour
         {
             Instantiate(giraffe, spawnPos);
             GameManager.Instance.Player.resources-=2700;
-            endGiraffeCooltime = Time.time+giraffeCooltime;
+            startGiraffeCooltime = Time.time;
+            endGiraffeCooltime =startGiraffeCooltime+giraffeCooltime;
         }
         else { return; }
     }

@@ -9,6 +9,8 @@ public class Canon : MonoBehaviour
     public GameObject canonBall;
     public Transform canon;
     public Transform muzzle;
+    public float canonCooltime =30;
+    private float startCooltime=0f;
 
     private void Start()
     {
@@ -22,8 +24,14 @@ public class Canon : MonoBehaviour
 
     private void SkillOn()
     {
-        isActive = !isActive;
-        aimingArea.SetActive(isActive);
+        if (Time.time >= startCooltime + canonCooltime)
+        {
+            print($"time{Time.time}");
+            print($"Sum{startCooltime+canonCooltime}");
+            isActive = !isActive;
+            aimingArea.SetActive(isActive);
+            startCooltime = Time.time;
+        }
     }
 
     private void Aiming()
