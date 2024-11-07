@@ -70,6 +70,7 @@ public class EnemyUnit : Unit
     protected override void Die()
     {
         GameManager.Instance.enemyList.Remove(this);
+        GameManager.Instance.Player.resources+=unitPrice;
         Destroy(gameObject);
     }
 

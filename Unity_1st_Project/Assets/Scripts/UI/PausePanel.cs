@@ -39,4 +39,5 @@ public class PausePanel : MonoBehaviour
 
         SceneManager.LoadScene("StartScene");
     }
+    
 }
