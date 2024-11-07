@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public abstract class Unit : MonoBehaviour
 {
     public float MoveSpeed { get; set; }
+    public float knockBackDistance = 100f;
+    public float knockBackHpRatio = 0.3f;
     protected float hp;
     protected float maxHp;
     protected int damage;
@@ -31,7 +33,8 @@ public abstract class Unit : MonoBehaviour
         fillImage.fillAmount = HpFillAmount;
         isAttack = false;
         RaycastHit2D[] hit = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y), -transform.right, attackRange);
-        
+        Debug.DrawRay(new Vector2(transform.position.x, transform.position.y), -transform.right*attackRange, Color.red);
+
         Move(hit);
     }
 
@@ -60,7 +63,7 @@ public abstract class Unit : MonoBehaviour
         preDamageTime = Time.time+attackInteval;
     }
 
-    public void TakeDamage(int onHitDamage)
+    public virtual void TakeDamage(int onHitDamage)
     {
         print($"{gameObject.name},{onHitDamage}");
         hp-=onHitDamage;

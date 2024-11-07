@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670ca7d8d90399a4abfebefaee7de055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockBackDistance: 100
+  knockBackHpRatio: 0.4
   fillImage: {fileID: 2570845742219979118}
   _moveSpeed: 0.5
   _hp: 6000

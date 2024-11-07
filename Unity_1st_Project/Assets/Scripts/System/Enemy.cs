@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using static UnityEngine.UI.Button;
 
 public class Enemy : Unit
 {
@@ -18,14 +20,18 @@ public class Enemy : Unit
     public int _hp =9000;
     public TextMeshProUGUI hpText;
     public Coroutine coSpawn;
+    public GameObject clearPanel;
+    public Button clearLobby;
+
     protected override void Awake()
     {
         hp=_hp;
         base.Awake();
-        
+        knockBackDistance = 0f;
+        knockBackHpRatio = 0f;
     }
 
-    private void Start() 
+    private void Start()
     {
         GameManager.Instance.Enemy=this;
         StartSpawnEnemy();
@@ -93,10 +99,27 @@ public class Enemy : Unit
     protected override void Die()
     {
         Time.timeScale = 0f;
+        clearPanel.SetActive(true);
+        clearLobby.onClick.AddListener(Lobby);
+    }
+
+    private void Lobby()
+    {
+        GameManager.Instance.playerList.Clear();
+        GameManager.Instance.enemyList.Clear();
+        GameManager.Instance.Player=null;
+        GameManager.Instance.Enemy=null;
+        GameManager.Instance.UnitSpawn=null;
+        GameManager.Instance.Canon=null;
+        GameManager.Instance.sec=0;
+        GameManager.Instance.min=0;
+        GameManager.Instance.aimArea=null;
+        GameManager.Instance.isTimeStop=false;
+
+        SceneManager.LoadScene("StartScene");
     }
 
     protected override void Move(RaycastHit2D[] hit)
-
     {
         throw new System.NotImplementedException();
     }

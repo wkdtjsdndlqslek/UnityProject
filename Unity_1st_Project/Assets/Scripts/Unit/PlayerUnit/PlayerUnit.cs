@@ -36,6 +36,26 @@ public class PlayerUnit : Unit
         }
     }
 
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        if (hp<maxHp*knockBackHpRatio)
+        {
+            StartCoroutine(KnockBack());
+        }
+    }
+
+    public void AccessKnockBack()
+    {
+        StartCoroutine(KnockBack());
+    }
+
+    IEnumerator KnockBack()
+    {
+        transform.position += Vector3.right*knockBackDistance*Time.deltaTime;
+        yield return new WaitForSeconds(1f);
+    }
+
     protected override void Die()
     {
         GameManager.Instance.playerList.Remove(this);

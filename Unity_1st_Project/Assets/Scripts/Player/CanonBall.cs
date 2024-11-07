@@ -44,6 +44,7 @@ public class CanonBall : MonoBehaviour
                 if(hit2d.collider.CompareTag("Enemy"))
                 {
                     hit2d.collider.GetComponent<EnemyUnit>().TakeDamage(damage);
+                    hit2d.collider.GetComponent<EnemyUnit>().AccessKnockBack();
                 }
             }
             Destroy(gameObject);

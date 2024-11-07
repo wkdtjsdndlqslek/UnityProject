@@ -13,6 +13,12 @@ public class UIManager : MonoBehaviour
     public GameObject levelUpCooltime;
     public Slider resourcesSlider;
     public TextMeshProUGUI resourcesPercent;
+    public GameObject clearPanel;
+    public Button clearLobby;
+    public GameObject defeatPanel;
+    public Button defeatLobby;
+    public Button restart;
+
 
     private void Update()
     {
@@ -20,6 +26,11 @@ public class UIManager : MonoBehaviour
         resourcesSlider.value = GameManager.Instance.Player.ResourcesFillAmount;
         resourcesPercent.text = $"{GameManager.Instance.Player.resources} / {GameManager.Instance.Player.maxResources}";
         levelUpPrice.text =$"{GameManager.Instance.Player.levelUpPrice}";
+        if(GameManager.Instance.Player.level==8)
+        {
+            GameManager.Instance.Player.levelUpPrice=0;
+            levelUpPrice.text="MAX";
+        }
         if (GameManager.Instance.Player.levelUpPrice>GameManager.Instance.Player.resources)
         { levelUpCooltime.SetActive(true); }
         else { levelUpCooltime.SetActive(false); }
