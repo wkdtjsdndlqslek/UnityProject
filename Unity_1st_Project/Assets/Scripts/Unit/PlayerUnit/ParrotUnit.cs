@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class ParrotUnit : PlayerUnit
 {
     public float _moveSpeed = 1.2f;

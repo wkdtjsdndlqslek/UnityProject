@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class PigUnit : EnemyUnit
 {
     public float _moveSpeed = 0.7f;

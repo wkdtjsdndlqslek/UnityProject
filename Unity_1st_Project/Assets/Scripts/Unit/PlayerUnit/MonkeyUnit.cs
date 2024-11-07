@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class MonkeyUnit : PlayerUnit
 {
     public float _moveSpeed = 1f;

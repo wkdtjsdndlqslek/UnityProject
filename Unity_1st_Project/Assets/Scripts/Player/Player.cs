@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -15,15 +12,10 @@ public class Player : Unit
     public float maxResources = 1000f;
     public float ResourcesFillAmount { get { return resources/maxResources; } }
     public int level = 1;
-    public Button levelUp;
     public int cash = 1000;
     public int _hp = 3000;
-    public TextMeshProUGUI hpText;
     public int skillDamage;
     public int levelUpPrice = 180;
-    public GameObject defeatPanel;
-    public Button defeatLobby;
-    public Button restart;
 
     protected override void Awake()
     {
@@ -34,14 +26,14 @@ public class Player : Unit
     }
     private void Start()
     {
-        levelUp.onClick.AddListener(LevelUp);
+        UIManager.Instance.playerTowerLevelUp.onClick.AddListener(LevelUp);
         GameManager.Instance.Player = this;
         StartCoroutine(Farming());
     }
 
     protected override void Update()
     {
-        hpText.text = $"{hp}/{maxHp}";
+        UIManager.Instance.playerHpText.text = $"{hp}/{maxHp}";
         fillImage.fillAmount = HpFillAmount;
     }
 
@@ -78,9 +70,9 @@ public class Player : Unit
     protected override void Die()
     {
         Time.timeScale =0f;
-        defeatPanel.SetActive(true);
-        defeatLobby.onClick.AddListener(Lobby);
-        restart.onClick.AddListener(Restart);
+        UIManager.Instance.defeatPanel.SetActive(true);
+        UIManager.Instance.defeatLobby.onClick.AddListener(Lobby);
+        UIManager.Instance.defeatRestart.onClick.AddListener(Restart);
     }
 
     private void Lobby()

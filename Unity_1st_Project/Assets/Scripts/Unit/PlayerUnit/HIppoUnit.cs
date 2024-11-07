@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class HippoUnit : PlayerUnit
 {
     public float _moveSpeed = 0.5f;

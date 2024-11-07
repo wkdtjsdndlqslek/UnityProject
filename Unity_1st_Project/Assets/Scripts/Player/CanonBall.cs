@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Transactions;
-using UnityEditor;
 using UnityEngine;
 
 public class CanonBall : MonoBehaviour
@@ -9,7 +5,7 @@ public class CanonBall : MonoBehaviour
     public int damage = 2000;
     public float moveSpeed = 5;
     public float explosionRange = 2f;
-    public GameObject explosion;
+    public Particle explosion;
 
     CircleCollider2D circleCollider;
 

@@ -1,11 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class TimeStoptrigger : MonoBehaviour
 {
-    public TextMeshProUGUI timer;
     private int min;
     private float sec;
     private float stopTimer = 10;
@@ -21,7 +19,7 @@ public class TimeStoptrigger : MonoBehaviour
         stopTimer -=Time.deltaTime;
         sec = (int)stopTimer;
         milliSec =(int)((stopTimer -sec)*100);
-        timer.text = $"{sec}:{milliSec}";
+        UIManager.Instance.monsterStopTimer.text = $"{sec}:{milliSec}";
     }
     IEnumerator BreakStop()
     {

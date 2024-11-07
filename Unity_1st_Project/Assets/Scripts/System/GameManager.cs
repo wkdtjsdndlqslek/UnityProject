@@ -1,13 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class GameManager : MonoBehaviour
+public class GameManager : SingletonManager<GameManager>
 {
-    private static GameManager instance;
-    public static GameManager Instance=>instance;
-
     public Player Player{get;set;}
     public Enemy Enemy{get;set;}
     public UnitSpawn UnitSpawn{get;set;}
@@ -22,18 +18,9 @@ public class GameManager : MonoBehaviour
     public Button defeatLobby;
     public Button restart;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            DestroyImmediate(this);
-            return;
-        }
+        base.Awake();
         DontDestroyOnLoad(gameObject);
     }
 
