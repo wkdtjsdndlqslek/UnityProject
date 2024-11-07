@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     public int min = 0;
     public Transform aimArea;
     public bool isTimeStop=false;
+    public GameObject defeatPanel;
+    public Button defeatLobby;
+    public Button restart;
 
     private void Awake()
     {

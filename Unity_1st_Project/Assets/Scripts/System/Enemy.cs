@@ -48,6 +48,8 @@ public class Enemy : Unit
         hpText.text = $"{hp}/{maxHp}";
     }
 
+    
+
     public IEnumerator SpawnEnemy()
     {
         while (true)

@@ -13,11 +13,6 @@ public class UIManager : MonoBehaviour
     public GameObject levelUpCooltime;
     public Slider resourcesSlider;
     public TextMeshProUGUI resourcesPercent;
-    public GameObject clearPanel;
-    public Button clearLobby;
-    public GameObject defeatPanel;
-    public Button defeatLobby;
-    public Button restart;
 
 
     private void Update()
