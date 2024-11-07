@@ -93,7 +93,6 @@ public class Enemy : Unit
             else
             {
                 yield return new WaitForSeconds(10f);
-                GameManager.Instance.isTimeStop = false;
             }
         }
     }

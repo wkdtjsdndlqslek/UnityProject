@@ -75,9 +75,17 @@ public class Canon : MonoBehaviour
         aimingArea.SetActive(false);
         isActive = false;
     }
+
+    Coroutine coroutine=null;
+
     public void accessNoCool()
     {
-        StartCoroutine(NoCool());
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+            coroutine = null;
+        }
+        coroutine = StartCoroutine(NoCool());
     }
     public IEnumerator NoCool()
     {

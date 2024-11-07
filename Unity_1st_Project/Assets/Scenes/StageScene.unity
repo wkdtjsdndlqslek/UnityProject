@@ -1883,7 +1883,7 @@ Transform:
   m_GameObject: {fileID: 185773225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.64, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5014,11 +5014,6 @@ MonoBehaviour:
   levelUpCooltime: {fileID: 1940085743}
   resourcesSlider: {fileID: 4780935103680272428}
   resourcesPercent: {fileID: 1496861314050728015}
-  clearPanel: {fileID: 1792394388}
-  clearLobby: {fileID: 65966768}
-  defeatPanel: {fileID: 715912396}
-  defeatLobby: {fileID: 32191897}
-  restart: {fileID: 952561242}
 --- !u!1 &597079864
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,6 +35,7 @@ public class TimeStoptrigger : MonoBehaviour
         {
             enemy.GetComponent<EnemyUnit>().ResetSpeed();
         }
+        GameManager.Instance.isTimeStop = false;
         stopTimer = 10;
         gameObject.SetActive(false);
     }

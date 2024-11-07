@@ -74,7 +74,7 @@ public class ItemManager : MonoBehaviour
     }
     private void MonsterStop()
     {
-        if (GameManager.Instance.Player.cash>=monsterStopCost)
+        if (GameManager.Instance.Player.cash>=monsterStopCost&&timeStoptrigger.gameObject.activeSelf==false)
         {
             itemPanel.SetActive(false);
             Time.timeScale = 1f;
