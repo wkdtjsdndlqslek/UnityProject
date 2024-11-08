@@ -9,6 +9,7 @@ public class PausePanel : MonoBehaviour
     public Button lobby;
     public GameObject panel;
     public TextMeshProUGUI currentTime;
+
     private void Start()
     {
         resume.onClick.AddListener(Resume);
@@ -26,14 +27,7 @@ public class PausePanel : MonoBehaviour
     }
     private void Lobby()
     {
-        GameManager.Instance.playerList.Clear();
-        GameManager.Instance.enemyList.Clear();
-        GameManager.Instance.Player=null;
-        GameManager.Instance.Enemy=null;
-        GameManager.Instance.UnitSpawn=null;
-        GameManager.Instance.Canon=null;
-        GameManager.Instance.aimArea=null;
-        GameManager.Instance.isTimeStop=false;
+        GameManager.Instance.Reset();
 
         SceneManager.LoadScene("StartScene");
     }

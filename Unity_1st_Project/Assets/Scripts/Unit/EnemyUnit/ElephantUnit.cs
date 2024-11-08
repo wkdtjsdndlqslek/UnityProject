@@ -7,7 +7,7 @@ public class ElephantUnit : EnemyUnit
     public float _range = 5;
     protected bool _isAreaAttack=true;
 
-    protected override void Awake()
+    protected override void OnEnable()
     {
         moveSpeed = _moveSpeed;
         MoveSpeed = moveSpeed;
@@ -16,11 +16,6 @@ public class ElephantUnit : EnemyUnit
         unitPrice = _unitPrice;
         attackRange = _range;
         isAreaAttack = _isAreaAttack;
-        base.Awake();
-    }
-
-    private void Start()
-    {
-        GameManager.Instance.enemyList.Add(this);
+        base.OnEnable();
     }
 }

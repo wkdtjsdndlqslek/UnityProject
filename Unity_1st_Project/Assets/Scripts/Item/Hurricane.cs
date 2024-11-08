@@ -1,3 +1,4 @@
+using Lean.Pool;
 using UnityEngine;
 
 public class Hurricane : MonoBehaviour
@@ -12,7 +13,7 @@ public class Hurricane : MonoBehaviour
         transform.Translate(-Vector2.right*moveSpeed*Time.deltaTime);
         if(transform.position.x<=-8)
         {
-            Destroy(gameObject);
+            LeanPool.Despawn(gameObject);
         }
     }
 }

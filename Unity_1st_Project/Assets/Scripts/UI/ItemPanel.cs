@@ -1,8 +1,9 @@
+using Lean.Pool;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemManager : MonoBehaviour
+public class ItemPanel : MonoBehaviour
 {
     public int thunderCost=10;
     public int hurricaneCost=20;
@@ -48,12 +49,11 @@ public class ItemManager : MonoBehaviour
         {
             itemPanel.SetActive(false);
             Time.timeScale = 1f;
-            Instantiate(thunderAiming);
+            LeanPool.Spawn(thunderAiming);
             GameManager.Instance.Player.cash -= thunderCost;
         }
         else
         {
-
         }
     }
     private void Hurricane()
@@ -62,12 +62,11 @@ public class ItemManager : MonoBehaviour
         {
             itemPanel.SetActive(false);
             Time.timeScale = 1f;
-            Instantiate(hurricane, new Vector2(8, 0.47f), Quaternion.identity);
+            LeanPool.Spawn(hurricane, new Vector2(8, 0.47f), Quaternion.identity);
             GameManager.Instance.Player.cash -=hurricaneCost;
         }
         else
         {
-
         }
     }
     private void MonsterStop()
@@ -81,7 +80,6 @@ public class ItemManager : MonoBehaviour
         }
         else
         {
-
         }
     }
     
@@ -96,7 +94,6 @@ public class ItemManager : MonoBehaviour
         }
         else
         {
-
         }
     }
     private void SpawnNoCooltime()
@@ -105,12 +102,11 @@ public class ItemManager : MonoBehaviour
         {
             itemPanel.SetActive(false);
             Time.timeScale = 1f;
-            GameManager.Instance.UnitSpawn.accessNoCool();
+            GameManager.Instance.UnitSpawner.accessNoCool();
             GameManager.Instance.Player.cash -= spawnNoCoolCost;
         }
         else
         {
-
         }
     }
 }

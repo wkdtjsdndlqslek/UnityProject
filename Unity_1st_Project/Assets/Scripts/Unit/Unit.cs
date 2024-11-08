@@ -22,7 +22,7 @@ public abstract class Unit : MonoBehaviour
     protected float HpFillAmount { get { return hp/maxHp; } }
     protected List<RaycastHit2D> attackList = new List<RaycastHit2D>();
 
-    protected virtual void Awake()
+    protected virtual void OnEnable()
     {
         maxHp=hp;
     }
@@ -33,7 +33,6 @@ public abstract class Unit : MonoBehaviour
         isAttack = false;
         RaycastHit2D[] hit = Physics2D.RaycastAll(new Vector2(transform.position.x, transform.position.y), -transform.right, attackRange);
         Debug.DrawRay(new Vector2(transform.position.x, transform.position.y), -transform.right*attackRange, Color.red);
-
         Move(hit);
     }
 
@@ -53,12 +52,10 @@ public abstract class Unit : MonoBehaviour
                 attackList[0].collider.GetComponent<Unit>().TakeDamage(damage);
             }
         }
-
         else
         {
             return;
         }
-
         preDamageTime = Time.time+attackInteval;
     }
 

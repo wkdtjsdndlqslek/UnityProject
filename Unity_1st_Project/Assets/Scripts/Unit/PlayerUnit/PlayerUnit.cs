@@ -1,15 +1,17 @@
+using Lean.Pool;
 using System.Collections;
 using UnityEngine;
 
 public class PlayerUnit : Unit
 {
 
-    protected override void Awake()
+    protected override void OnEnable()
     {
-        base.Awake();
+        base.OnEnable();
         camp = "Player";
         enemyCamp = "Enemy";
         gameObject.tag = camp;
+        GameManager.Instance.playerList.Add(this);
     }
 
     protected override void Move(RaycastHit2D[] hit)
@@ -38,7 +40,7 @@ public class PlayerUnit : Unit
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        if (hp<maxHp*knockBackHpRatio)
+        if (hp>0&&hp<maxHp*knockBackHpRatio)
         {
             StartCoroutine(KnockBack());
         }
@@ -58,6 +60,7 @@ public class PlayerUnit : Unit
     protected override void Die()
     {
         GameManager.Instance.playerList.Remove(this);
-        Destroy(gameObject);
+        StopAllCoroutines();
+        LeanPool.Despawn(gameObject);
     }
 }

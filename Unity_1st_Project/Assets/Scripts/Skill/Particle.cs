@@ -1,17 +1,18 @@
 using System.Collections;
 using UnityEngine;
+using Lean.Pool;
 
 public class Particle : MonoBehaviour
 {
     void Start()
     {
-        StartCoroutine(Die());
+        StartCoroutine(Disappear());
     }
 
-    IEnumerator Die()
+    IEnumerator Disappear()
     {
         yield return new WaitForSeconds(0.2f);
-        Destroy(gameObject);
+        LeanPool.Despawn(gameObject);
     }
 }
 

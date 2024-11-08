@@ -7,7 +7,7 @@ public class SnakeUnit : EnemyUnit
     public float _range = 3;
     protected bool _isAreaAttack=false;
 
-    protected override void Awake()
+    protected override void OnEnable()
     {
         moveSpeed = _moveSpeed;
         MoveSpeed = moveSpeed;
@@ -16,11 +16,6 @@ public class SnakeUnit : EnemyUnit
         unitPrice = _unitPrice;
         attackRange = _range;
         isAreaAttack = _isAreaAttack;
-        base.Awake();
-    }
-
-    private void Start()
-    {
-        GameManager.Instance.enemyList.Add(this);
+        base.OnEnable();
     }
 }

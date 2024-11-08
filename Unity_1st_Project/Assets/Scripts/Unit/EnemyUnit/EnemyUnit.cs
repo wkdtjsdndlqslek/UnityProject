@@ -1,15 +1,18 @@
+using Lean.Pool;
 using System.Collections;
 using UnityEngine;
 
 public class EnemyUnit : Unit
 {
     public float moveSpeed;
-    protected override void Awake()
+
+    protected override void OnEnable()
     {
-        base.Awake();
+        base.OnEnable();
         camp = "Enemy";
         enemyCamp = "Player";
         gameObject.tag = camp;
+        GameManager.Instance.enemyList.Add(this);
     }
 
     protected override void Update()
@@ -48,7 +51,7 @@ public class EnemyUnit : Unit
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        if (hp<maxHp*knockBackHpRatio)
+        if (hp>0&&hp<maxHp*knockBackHpRatio)
         {
             StartCoroutine(KnockBack());
         }
@@ -68,8 +71,9 @@ public class EnemyUnit : Unit
     protected override void Die()
     {
         GameManager.Instance.enemyList.Remove(this);
-        GameManager.Instance.Player.resources+=unitPrice;
-        Destroy(gameObject);
+        GameManager.Instance.Player.EarnResoure(unitPrice);
+        StopAllCoroutines();
+        LeanPool.Despawn(gameObject);
     }
 
     public void ResetSpeed()

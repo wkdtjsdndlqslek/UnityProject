@@ -1,3 +1,4 @@
+using Lean.Pool;
 using UnityEngine;
 
 public class ThunderAim : MonoBehaviour
@@ -29,7 +30,7 @@ public class ThunderAim : MonoBehaviour
 
     private void Fire()
     {
-        Instantiate(thunder,transform.position,Quaternion.identity);
-        Destroy(gameObject);
+        LeanPool.Spawn(thunder,transform.position,Quaternion.identity);
+        LeanPool.Despawn(gameObject);
     }
 }

@@ -8,7 +8,7 @@ public class PandatUnit : EnemyUnit
     public float _range = 1;
     protected bool _isAreaAttack=true;
 
-    protected override void Awake()
+    protected override void OnEnable()
     {
         moveSpeed = _moveSpeed;
         MoveSpeed = moveSpeed;
@@ -17,11 +17,6 @@ public class PandatUnit : EnemyUnit
         unitPrice = _unitPrice;
         attackRange = _range;
         isAreaAttack = _isAreaAttack;
-        base.Awake();
-    }
-
-    private void Start()
-    {
-        GameManager.Instance.enemyList.Add(this);
+        base.OnEnable();
     }
 }

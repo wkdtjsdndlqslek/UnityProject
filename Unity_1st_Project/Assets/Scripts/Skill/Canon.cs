@@ -1,44 +1,46 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Lean.Pool;
 
 public class Canon : MonoBehaviour
 {
     public float _canonCooltime =30;
-    private float canonCooltime;
+    public float CanonCooltime { get; set; }
     public float NoCoolDuration = 5f;
     public GameObject canonAimingArea;
     private bool isActive=false;
-    public CanonBall canonBall;
+    public GameObject canonBall;
     public Transform canonPosition;
     public Transform muzzlePosition;
-    private float startCooltime;
+    public float StartCanonCooltime { get; set; }
+    private Coroutine NoCoolCor = null;
+    public Button shootCanonButton;
 
     private void Awake()
     {
-        canonCooltime = _canonCooltime;
-        startCooltime=-canonCooltime;
+        CanonCooltime = _canonCooltime;
+        StartCanonCooltime=-CanonCooltime;
     }
 
     private void Start()
     {
         GameManager.Instance.Canon = this;
-        UIManager.Instance.shootCanonButton.onClick.AddListener(SkillOn);
+        shootCanonButton.onClick.AddListener(SkillOn);
     }
 
     private void Update()
     {
         Aiming();
-        UIManager.Instance.canonCooltimePanel.fillAmount = (canonCooltime-(Time.time- startCooltime))/canonCooltime;
     }
 
     private void SkillOn()
     {
-        if (Time.time >= startCooltime + canonCooltime)
+        if (Time.time >= StartCanonCooltime + CanonCooltime)
         {
             isActive = !isActive;
             canonAimingArea.SetActive(isActive);
-            startCooltime = Time.time;
+            StartCanonCooltime = Time.time;
         }
     }
 
@@ -68,26 +70,25 @@ public class Canon : MonoBehaviour
 
     private void Fire()
     {
-        Instantiate(canonBall,muzzlePosition.position,muzzlePosition.rotation);
+        LeanPool.Spawn(canonBall, muzzlePosition.position, muzzlePosition.rotation);
         canonAimingArea.SetActive(false);
         isActive = false;
     }
 
-    Coroutine coroutine=null;
-
     public void accessNoCool()
     {
-        if (coroutine != null)
+        if (NoCoolCor != null)
         {
-            StopCoroutine(coroutine);
-            coroutine = null;
+            StopCoroutine(NoCoolCor);
+            NoCoolCor = null;
         }
-        coroutine = StartCoroutine(NoCool());
+        NoCoolCor = StartCoroutine(NoCool());
     }
+
     public IEnumerator NoCool()
     {
-        canonCooltime=0;
+        CanonCooltime=0;
         yield return new WaitForSeconds(NoCoolDuration);
-        canonCooltime =_canonCooltime;
+        CanonCooltime =_canonCooltime;
     }
 }

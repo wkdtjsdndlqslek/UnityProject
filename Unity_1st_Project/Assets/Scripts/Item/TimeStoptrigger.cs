@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TimeStoptrigger : MonoBehaviour
 {
-    private int min;
-    private float sec;
+    private float timeStopSec;
     private float stopTimer = 10;
     private float milliSec;
+    public TextMeshProUGUI monsterStopTimer;
 
     private void OnEnable()
     {
@@ -17,10 +17,11 @@ public class TimeStoptrigger : MonoBehaviour
     private void Update()
     {
         stopTimer -=Time.deltaTime;
-        sec = (int)stopTimer;
-        milliSec =(int)((stopTimer -sec)*100);
-        UIManager.Instance.monsterStopTimer.text = $"{sec}:{milliSec}";
+        timeStopSec = (int)stopTimer;
+        milliSec =(int)((stopTimer -timeStopSec)*100);
+        monsterStopTimer.text = $"{timeStopSec}:{milliSec}";
     }
+
     IEnumerator BreakStop()
     {
         GameManager.Instance.isTimeStop = true;

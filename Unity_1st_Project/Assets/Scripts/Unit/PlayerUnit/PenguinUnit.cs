@@ -7,7 +7,7 @@ public class PenguinUnit : PlayerUnit
     public float _range = 1;
     protected bool _isAreaAttack = false;
 
-    protected override void Awake()
+    protected override void OnEnable()
     {
         MoveSpeed = _moveSpeed;
         hp = _hp;
@@ -15,11 +15,6 @@ public class PenguinUnit : PlayerUnit
         unitPrice = _unitPrice;
         attackRange = _range;
         isAreaAttack = _isAreaAttack;
-        base.Awake();
-    }
-
-    private void Start()
-    {
-        GameManager.Instance.playerList.Add(this);
+        base.OnEnable();
     }
 }

@@ -5,8 +5,9 @@ using UnityEngine.UIElements;
 public class GameManager : SingletonManager<GameManager>
 {
     public Player Player{get;set;}
-    public Enemy Enemy{get;set;}
-    public UnitSpawn UnitSpawn{get;set;}
+    public PlayerTower PlayerTower{get;set;}
+    public EnemyTower EnemyTower{get;set;}
+    public UnitSpawner UnitSpawner{get;set;}
     public List<EnemyUnit> enemyList = new List<EnemyUnit>();
     public List<PlayerUnit> playerList= new List<PlayerUnit>();
     public Canon Canon{get;set;}
@@ -14,9 +15,6 @@ public class GameManager : SingletonManager<GameManager>
     public int min = 0;
     public Transform aimArea;
     public bool isTimeStop=false;
-    public GameObject defeatPanel;
-    public Button defeatLobby;
-    public Button restart;
 
     protected override void Awake()
     {
@@ -40,4 +38,15 @@ public class GameManager : SingletonManager<GameManager>
         GameManager.Instance.min = 0;
     }
 
+    public void Reset()
+    {
+        playerList.Clear();
+        enemyList.Clear();
+        Player=null;
+        EnemyTower=null;
+        UnitSpawner=null;
+        Canon=null;
+        aimArea=null;
+        isTimeStop=false;
+    }
 }

@@ -923,7 +923,7 @@ GameObject:
   - component: {fileID: 108686623}
   - component: {fileID: 108686622}
   m_Layer: 5
-  m_Name: Cooltime
+  m_Name: PenguinCool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1343,7 +1343,7 @@ GameObject:
   - component: {fileID: 139644604}
   - component: {fileID: 139644603}
   m_Layer: 5
-  m_Name: Text
+  m_Name: LevelUpPriceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1735,7 +1735,7 @@ GameObject:
   - component: {fileID: 184721226}
   - component: {fileID: 184721225}
   m_Layer: 5
-  m_Name: PriceInfo
+  m_Name: CanonNoCoolPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1873,7 +1873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e607fc604aff44da7783e3660faed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 792458522}
+  monsterStopTimer: {fileID: 792458522}
 --- !u!4 &185773227
 Transform:
   m_ObjectHideFlags: 0
@@ -2225,7 +2225,7 @@ GameObject:
   - component: {fileID: 225565766}
   - component: {fileID: 225565765}
   m_Layer: 5
-  m_Name: PriceInfo
+  m_Name: MonsterPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3728,7 +3728,7 @@ GameObject:
   - component: {fileID: 394553692}
   - component: {fileID: 394553691}
   m_Layer: 5
-  m_Name: Cooltime
+  m_Name: ParrotCool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3791,6 +3791,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394553689}
   m_CullTransparentMesh: 1
+--- !u!1 &440224072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 440224074}
+  - component: {fileID: 440224073}
+  m_Layer: 0
+  m_Name: ObjectPoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &440224073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440224072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0994a14f85f307f4f8b3eb84d8f5cde5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &440224074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440224072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 919.15, y: 490.38873, z: -12.05776}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &443724769
 GameObject:
   m_ObjectHideFlags: 0
@@ -3804,7 +3848,7 @@ GameObject:
   - component: {fileID: 443724772}
   - component: {fileID: 443724771}
   m_Layer: 5
-  m_Name: 'PriceInfo '
+  m_Name: SpawnNoCoolPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4598,7 +4642,7 @@ GameObject:
   - component: {fileID: 512298276}
   - component: {fileID: 512298275}
   m_Layer: 5
-  m_Name: LackResource
+  m_Name: ParrotLack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4892,10 +4936,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 548548696}
+  - component: {fileID: 548548697}
   - component: {fileID: 548548695}
   - component: {fileID: 548548694}
   - component: {fileID: 548548693}
-  - component: {fileID: 548548697}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5009,11 +5053,6 @@ MonoBehaviour:
   itemPanel: {fileID: 289664909}
   pauseButton: {fileID: 5783429986512455385}
   pausePanel: {fileID: 1558673341}
-  levelUptext: {fileID: 2117557890454217220}
-  levelUpPrice: {fileID: 139644603}
-  levelUpCooltime: {fileID: 1940085743}
-  resourcesSlider: {fileID: 4780935103680272428}
-  resourcesPercent: {fileID: 1496861314050728015}
 --- !u!1 &597079864
 GameObject:
   m_ObjectHideFlags: 0
@@ -5025,7 +5064,7 @@ GameObject:
   - component: {fileID: 597079865}
   - component: {fileID: 597079866}
   m_Layer: 0
-  m_Name: Canon
+  m_Name: Skill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5063,12 +5102,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canonCooltime: 60
   NoCoolDuration: 5
-  skill: {fileID: 6053019165676972298}
-  aimingArea: {fileID: 3246046314080478665}
+  canonAimingArea: {fileID: 3246046314080478665}
   canonBall: {fileID: 5168666013785094962, guid: ffb08c7dbf82483478a7d4580f879353, type: 3}
-  canon: {fileID: 1795464747}
-  muzzle: {fileID: 1989004442}
-  canonCooltimePanel: {fileID: 458248610}
+  canonPosition: {fileID: 1795464747}
+  muzzlePosition: {fileID: 1989004442}
+  shootCanonButton: {fileID: 6053019165676972298}
 --- !u!1 &614893586
 GameObject:
   m_ObjectHideFlags: 0
@@ -5082,7 +5120,7 @@ GameObject:
   - component: {fileID: 614893589}
   - component: {fileID: 614893588}
   m_Layer: 5
-  m_Name: PriceInfo
+  m_Name: ThunderPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5429,7 +5467,7 @@ GameObject:
   - component: {fileID: 690360637}
   - component: {fileID: 690360636}
   m_Layer: 5
-  m_Name: Button01_White
+  m_Name: Price
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5550,7 +5588,7 @@ GameObject:
   - component: {fileID: 691927109}
   - component: {fileID: 691927108}
   m_Layer: 5
-  m_Name: Cooltime
+  m_Name: HippoCool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5821,7 +5859,7 @@ GameObject:
   - component: {fileID: 764446061}
   - component: {fileID: 764446060}
   m_Layer: 5
-  m_Name: LackResource
+  m_Name: GiraffeLack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6195,7 +6233,7 @@ GameObject:
   - component: {fileID: 883416298}
   - component: {fileID: 883416297}
   m_Layer: 5
-  m_Name: LackResource
+  m_Name: PenguinLack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7395,7 +7433,7 @@ GameObject:
   - component: {fileID: 1060507841}
   - component: {fileID: 1060507840}
   m_Layer: 5
-  m_Name: Cooltime
+  m_Name: MonkeyCool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7799,7 +7837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 284.5, y: -28.789978}
+  m_AnchoredPosition: {x: 284.5, y: -28.79004}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1091756844
@@ -9361,7 +9399,7 @@ GameObject:
   - component: {fileID: 1302802912}
   - component: {fileID: 1302802911}
   m_Layer: 5
-  m_Name: LackResource
+  m_Name: HippoLack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10145,11 +10183,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1467048204}
   - component: {fileID: 1467048206}
+  - component: {fileID: 1467048208}
   - component: {fileID: 1467048205}
   - component: {fileID: 1467048207}
-  - component: {fileID: 1467048208}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyTower
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10310,14 +10348,6 @@ MonoBehaviour:
   knockBackDistance: 1000
   knockBackHpRatio: 0.3
   fillImage: {fileID: 946789052}
-  EnemySpawnPos: {fileID: 2060989374}
-  spawnDelay: 3
-  spawnAmount: 1
-  elephantUnit: {fileID: 1005598596253059964, guid: 2418afe1d9e1d714e8258ccb6f616e08, type: 3}
-  pandaUnit: {fileID: 4424927555453361225, guid: 729cf9d1b80a74649a18226061edbc59, type: 3}
-  snakeUnit: {fileID: 5013871529797952152, guid: 050665b6131f09a42900bf8e9f2aeb0c, type: 3}
-  pigUnit: {fileID: 9177716993876762267, guid: 8586f7d322c02a54c970527bbaaee7be, type: 3}
-  rabbitUnit: {fileID: 1310152693604045607, guid: feb9c2513073695428dd55112e74b2a8, type: 3}
   _hp: 9000
   hpText: {fileID: 1372032707}
   clearPanel: {fileID: 1792394388}
@@ -10454,6 +10484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1471906395}
+  - component: {fileID: 1471906396}
   m_Layer: 5
   m_Name: UnderBarUI
   m_TagString: Untagged
@@ -10474,6 +10505,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1731654326}
+  - {fileID: 3529572820497997245}
+  - {fileID: 2972375077532193752}
   - {fileID: 1934828462}
   m_Father: {fileID: 548548696}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10482,6 +10515,29 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1471906396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471906394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c111e11e6c86f864dbcb7ffba5770d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monkeyCooltimePanel: {fileID: 1060507840}
+  monkeyLackResourcePanel: {fileID: 1806609031}
+  penguinCooltimePanel: {fileID: 108686622}
+  penguinLackResourcePanel: {fileID: 883416295}
+  parrotCooltimePanel: {fileID: 394553691}
+  parrotLackResourcePanel: {fileID: 512298273}
+  hippoCooltimePanel: {fileID: 691927108}
+  hippoLackResourcePanel: {fileID: 1302802909}
+  giraffeCooltimePanel: {fileID: 1844666503}
+  giraffeLackResourcePanel: {fileID: 764446058}
+  canonCooltimePanel: {fileID: 458248610}
 --- !u!1 &1479334625
 GameObject:
   m_ObjectHideFlags: 0
@@ -11496,7 +11552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693367712}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.8, y: 0.95, z: 0.95}
   m_ConstrainProportionsScale: 0
@@ -11883,8 +11939,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1805220326}
+  - component: {fileID: 1805220327}
   m_Layer: 0
-  m_Name: PlayerSpawnPosition
+  m_Name: UnitSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11905,6 +11962,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1805220327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805220325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bab60df0b69f14694d60f6a2b1e88e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monkeyCooltime: 1
+  _penguinCooltime: 2
+  _parrotCooltime: 3
+  _hippoCooltime: 4
+  _giraffeCooltime: 5
+  monkey: {fileID: 2517938613347039186, guid: ced085d0fe7a1c54fafb7788b70771c9, type: 3}
+  monkeySpawn: {fileID: 4638742731246280316}
+  penguin: {fileID: 6291538510977300039, guid: 052716ef98c022f4399095ea4bc2c47a, type: 3}
+  penguinSpawn: {fileID: 1280587605}
+  parrot: {fileID: 1812084744438038016, guid: 92ea7a3b70cd7d044ad437038ad281da, type: 3}
+  parrotSpawn: {fileID: 1177129032}
+  hippo: {fileID: 7357219060373584517, guid: 6b7fed0345bea3c4fb7ebd3d72db392f, type: 3}
+  hippoSpawn: {fileID: 169881757}
+  giraffe: {fileID: 3141460173536869856, guid: f94a918bd6013f7488a695434b1a91a1, type: 3}
+  giraffeSpawn: {fileID: 1468789109}
 --- !u!1 &1806609031
 GameObject:
   m_ObjectHideFlags: 0
@@ -11917,7 +12001,7 @@ GameObject:
   - component: {fileID: 1806609034}
   - component: {fileID: 1806609033}
   m_Layer: 5
-  m_Name: LackResource
+  m_Name: MonkeyLack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12114,7 +12198,7 @@ GameObject:
   - component: {fileID: 1844666504}
   - component: {fileID: 1844666503}
   m_Layer: 5
-  m_Name: Cooltime
+  m_Name: GiraffeCool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12224,11 +12308,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1917551862}
   - component: {fileID: 1917551864}
+  - component: {fileID: 1917551866}
   - component: {fileID: 1917551863}
   - component: {fileID: 1917551865}
-  - component: {fileID: 1917551866}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerTower
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12390,20 +12474,11 @@ MonoBehaviour:
   knockBackDistance: 1000
   knockBackHpRatio: 0.3
   fillImage: {fileID: 76003229}
-  farmingAmount: 100
-  farmingDuration: 3
-  resources: 0
-  maxResources: 1000
-  level: 1
-  levelUp: {fileID: 1581912552368832411}
-  cash: 1000
   _hp: 3000
-  hpText: {fileID: 296532150}
-  skillDamage: 0
-  levelUpPrice: 180
+  playerHpText: {fileID: 296532150}
   defeatPanel: {fileID: 715912396}
   defeatLobby: {fileID: 32191897}
-  restart: {fileID: 952561242}
+  defeatRestart: {fileID: 952561242}
 --- !u!1 &1934828461
 GameObject:
   m_ObjectHideFlags: 0
@@ -12415,7 +12490,6 @@ GameObject:
   - component: {fileID: 1934828462}
   - component: {fileID: 1934828463}
   - component: {fileID: 1934828464}
-  - component: {fileID: 1934828465}
   m_Layer: 5
   m_Name: UnitSpawnUI
   m_TagString: Untagged
@@ -12435,19 +12509,17 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3529572820497997245}
   - {fileID: 7309207219555859546}
   - {fileID: 1188780449}
   - {fileID: 629530833}
   - {fileID: 227642607}
   - {fileID: 1598652113}
-  - {fileID: 2972375077532193752}
   m_Father: {fileID: 1471906395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 200}
+  m_SizeDelta: {x: -500, y: 200}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1934828463
 CanvasRenderer:
@@ -12483,44 +12555,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1934828465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934828461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70bab60df0b69f14694d60f6a2b1e88e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monkeySpawn: {fileID: 4638742731246280316}
-  monkey: {fileID: 2517938613347039186, guid: ced085d0fe7a1c54fafb7788b70771c9, type: 3}
-  _monkeyCooltime: 1
-  penguinSpawn: {fileID: 1280587605}
-  penguin: {fileID: 6291538510977300039, guid: 052716ef98c022f4399095ea4bc2c47a, type: 3}
-  _penguinCooltime: 2
-  parrotSpawn: {fileID: 1177129032}
-  parrot: {fileID: 1812084744438038016, guid: 92ea7a3b70cd7d044ad437038ad281da, type: 3}
-  _parrotCooltime: 3
-  hippoSpawn: {fileID: 169881757}
-  hippo: {fileID: 7357219060373584517, guid: 6b7fed0345bea3c4fb7ebd3d72db392f, type: 3}
-  _hippoCooltime: 4
-  giraffeSpawn: {fileID: 1468789109}
-  giraffe: {fileID: 3141460173536869856, guid: f94a918bd6013f7488a695434b1a91a1, type: 3}
-  _giraffeCooltime: 5
-  spawnPos: {fileID: 1805220326}
-  monkeyCooltimePanel: {fileID: 1060507840}
-  penguinCooltimePanel: {fileID: 108686622}
-  parrotCooltimePanel: {fileID: 394553691}
-  hippoCooltimePanel: {fileID: 691927108}
-  giraffeCooltimePanel: {fileID: 1844666503}
-  monkeyLackResourcePanel: {fileID: 1806609031}
-  penguinLackResourcePanel: {fileID: 883416295}
-  parrotLackResourcePanel: {fileID: 512298273}
-  hippoLackResourcePanel: {fileID: 1302802909}
-  giraffeLackResourcePanel: {fileID: 764446058}
 --- !u!1 &1940085743
 GameObject:
   m_ObjectHideFlags: 0
@@ -12819,6 +12853,64 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &2015931812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2015931814}
+  - component: {fileID: 2015931813}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2015931813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015931812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64fcb03563d2fc048a49ff36ef6ef1db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  farmingAmount: 20
+  farmingDuration: 3
+  resources: 0
+  maxResources: 1000
+  level: 1
+  cash: 1000
+  skillDamage: 0
+  levelUpPrice: 180
+  playerTowerLevelUp: {fileID: 1581912552368832411}
+  levelUpText: {fileID: 2117557890454217220}
+  levelUpPriceText: {fileID: 139644603}
+  levelUpCooltime: {fileID: 1940085743}
+  currentResource: {fileID: 4780935103680272428}
+  resourcesPercent: {fileID: 1496861314050728015}
+--- !u!4 &2015931814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015931812}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.08725431, y: 0.38714442, z: -0.057019748}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2039484757
 GameObject:
   m_ObjectHideFlags: 0
@@ -12855,7 +12947,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 853.5, y: -28.789978}
+  m_AnchoredPosition: {x: 853.5, y: -28.79004}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2039484760
@@ -12989,8 +13081,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2060989374}
+  - component: {fileID: 2060989375}
   m_Layer: 0
-  m_Name: EnemySpawnPosition
+  m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13011,6 +13104,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2060989375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060989373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca2f98a9addc3947b317203b87d3193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDelay: 2
+  spawnAmount: 2
+  elephantUnit: {fileID: 1005598596253059964, guid: 2418afe1d9e1d714e8258ccb6f616e08, type: 3}
+  pandaUnit: {fileID: 4424927555453361225, guid: 729cf9d1b80a74649a18226061edbc59, type: 3}
+  snakeUnit: {fileID: 5013871529797952152, guid: 050665b6131f09a42900bf8e9f2aeb0c, type: 3}
+  pigUnit: {fileID: 9177716993876762267, guid: 8586f7d322c02a54c970527bbaaee7be, type: 3}
+  rabbitUnit: {fileID: 1310152693604045607, guid: feb9c2513073695428dd55112e74b2a8, type: 3}
 --- !u!1 &2065661409
 GameObject:
   m_ObjectHideFlags: 0
@@ -14346,7 +14458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1422.5, y: -28.789978}
+  m_AnchoredPosition: {x: 1422.5, y: -28.79004}
   m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581912552368832411
@@ -14417,7 +14529,6 @@ GameObject:
   - component: {fileID: 3529572820497997245}
   - component: {fileID: 7142963473231312200}
   - component: {fileID: 6988558181897395111}
-  - component: {fileID: 5603837454690903919}
   m_Layer: 5
   m_Name: TowerLevelUp
   m_TagString: Untagged
@@ -14819,11 +14930,11 @@ RectTransform:
   - {fileID: 4054571043590420273}
   - {fileID: 5105211368250383880}
   - {fileID: 458248609}
-  m_Father: {fileID: 1934828462}
+  m_Father: {fileID: 1471906395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -144, y: -100}
   m_SizeDelta: {x: 190, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3200195922073009393
@@ -14920,11 +15031,11 @@ RectTransform:
   - {fileID: 690360635}
   - {fileID: 6853680478666772589}
   - {fileID: 2414151794564626772}
-  m_Father: {fileID: 1934828462}
+  m_Father: {fileID: 1471906395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 144, y: -100}
   m_SizeDelta: {x: 190, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3557401261498667065
@@ -15631,7 +15742,7 @@ GameObject:
   - component: {fileID: 6083863603883118963}
   - component: {fileID: 1496861314050728015}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ResourcePercent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15803,50 +15914,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4558075292475980156}
   m_CullTransparentMesh: 1
---- !u!114 &5603837454690903919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688554292913680544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 6988558181897395111}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!224 &5783429986225238216
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16537,7 +16604,7 @@ GameObject:
   - component: {fileID: 7522276602047546518}
   - component: {fileID: 4780935103680272428}
   m_Layer: 5
-  m_Name: Slider_Basic01_Sky
+  m_Name: CurrentResource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16586,7 +16653,7 @@ GameObject:
   - component: {fileID: 1805256727069123354}
   - component: {fileID: 3761917150610284498}
   m_Layer: 5
-  m_Name: PriceInfo
+  m_Name: HurricanePrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16630,7 +16697,7 @@ GameObject:
   - component: {fileID: 2381086598021728067}
   - component: {fileID: 2117557890454217220}
   m_Layer: 5
-  m_Name: Text
+  m_Name: LevelUpText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16864,16 +16931,18 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1659033766}
-  - {fileID: 965467518}
-  - {fileID: 380586944}
   - {fileID: 1693367714}
+  - {fileID: 380586944}
+  - {fileID: 965467518}
   - {fileID: 185773227}
-  - {fileID: 1805220326}
-  - {fileID: 2060989374}
   - {fileID: 322017740}
+  - {fileID: 2015931814}
   - {fileID: 548548696}
   - {fileID: 836441534}
   - {fileID: 1917551862}
   - {fileID: 1467048204}
   - {fileID: 59815686}
+  - {fileID: 1805220326}
+  - {fileID: 2060989374}
   - {fileID: 354364472}
+  - {fileID: 440224074}

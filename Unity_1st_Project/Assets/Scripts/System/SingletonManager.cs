@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class SingletonManager<T> : MonoBehaviour where T : MonoBehaviour
 {
-    private T instance;
-    public static T Instance { get { return Instance; } }
+    private static T instance;
+    public static T Instance { get { return instance; } }
 
     protected virtual void Awake()
     {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Lean.Pool;
 
 public class CanonBall : MonoBehaviour
 {
@@ -6,8 +7,7 @@ public class CanonBall : MonoBehaviour
     public float moveSpeed = 5;
     public float explosionRange = 2f;
     public Particle explosion;
-
-    CircleCollider2D circleCollider;
+    private CircleCollider2D circleCollider;
 
     private void Update()
     {
@@ -23,7 +23,7 @@ public class CanonBall : MonoBehaviour
     {
         if (collision.CompareTag("Land"))
         {
-            Instantiate(explosion,transform.position,Quaternion.identity);
+            LeanPool.Spawn(explosion,transform.position,Quaternion.identity);
             RaycastHit2D[] hit2Ds = Physics2D.CircleCastAll(transform.position, explosionRange, Vector2.zero);
 
             Vector2[] coordination = new Vector2[360];
@@ -43,8 +43,7 @@ public class CanonBall : MonoBehaviour
                     hit2d.collider.GetComponent<EnemyUnit>().AccessKnockBack();
                 }
             }
-            Destroy(gameObject);
+            LeanPool.Despawn(gameObject);
         }
-        
     }
 }

@@ -1,3 +1,4 @@
+using Lean.Pool;
 using UnityEngine;
 
 public class Thunder : MonoBehaviour
@@ -18,6 +19,6 @@ public class Thunder : MonoBehaviour
 
     private void Disappear()
     {
-        Destroy(gameObject);
+        LeanPool.Despawn(gameObject);
     }
 }
