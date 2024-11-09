@@ -4,7 +4,7 @@ using Lean.Pool;
 
 public class Particle : MonoBehaviour
 {
-    void Start()
+    void OnEnable()
     {
         StartCoroutine(Disappear());
     }
